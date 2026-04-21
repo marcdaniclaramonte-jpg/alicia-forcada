@@ -1,0 +1,1582 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Centro Médico Estético Alicia Forcada | Medicina Estética en Almassora, Castellón</title>
+  <meta name="description" content="Centro Médico Estético Alicia Forcada en Almassora, Castellón. Especialistas en medicina estética avanzada, tratamientos faciales y rejuvenecimiento. Reserva tu cita." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary:   #C4892A;
+      --primary-dark: #A07025;
+      --champagne: #D4A855;
+      --bg:        #FFFFFF;
+      --fg:        #211D18;
+      --muted:     #EDE9E3;
+      --muted-fg:  #7A7167;
+      --border:    #DDD1B8;
+      --surface:   #F5F1EB;
+      --radius:    2px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--fg);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', serif;
+      line-height: 1.25;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button { cursor: pointer; font-family: inherit; }
+
+    /* ── UTILITIES ─────────────────────────────── */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+    .section-tag {
+      display: inline-block;
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: .75rem;
+    }
+    .section-tag::before { content: '— '; }
+    .section-tag::after  { content: ' —'; }
+    .section-title {
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      color: var(--fg);
+      margin-bottom: 1rem;
+    }
+    .section-subtitle {
+      font-size: 1rem;
+      color: var(--muted-fg);
+      max-width: 540px;
+    }
+    .divider {
+      width: 3rem;
+      height: 2px;
+      background: var(--primary);
+      margin: 1rem 0 2rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .75rem 1.75rem;
+      border-radius: var(--radius);
+      font-size: .875rem;
+      font-weight: 500;
+      letter-spacing: .04em;
+      transition: all .2s ease;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+    }
+    .btn-primary:hover { background: var(--primary-dark); }
+    .btn-outline {
+      background: transparent;
+      color: var(--primary);
+      border: 1.5px solid var(--primary);
+    }
+    .btn-outline:hover { background: var(--primary); color: #fff; }
+    .btn-white {
+      background: #fff;
+      color: var(--primary);
+    }
+    .btn-white:hover { background: var(--muted); }
+
+    /* ── NAVBAR ────────────────────────────────── */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      transition: background .3s, box-shadow .3s;
+    }
+    #navbar.scrolled {
+      background: rgba(255,255,255,.97);
+      box-shadow: 0 1px 20px rgba(196,137,42,.08);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+      gap: 2rem;
+    }
+    .nav-logo {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+    .nav-logo span:first-child {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .nav-logo span:last-child {
+      font-size: .7rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--muted-fg);
+    }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+    .nav-links a {
+      font-size: .8rem;
+      font-weight: 500;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--fg);
+      transition: color .2s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px; left: 0;
+      width: 0; height: 1.5px;
+      background: var(--primary);
+      transition: width .2s;
+    }
+    .nav-links a:hover { color: var(--primary); }
+    .nav-links a:hover::after { width: 100%; }
+    #navbar.scrolled .nav-links a { color: var(--fg); }
+    #navbar:not(.scrolled) .nav-links a { color: rgba(255,255,255,.9); }
+    #navbar:not(.scrolled) .nav-logo span:first-child { color: #fff; }
+    #navbar:not(.scrolled) .nav-logo span:last-child { color: rgba(255,255,255,.65); }
+    #navbar:not(.scrolled) .btn-outline { color: #fff; border-color: rgba(255,255,255,.7); }
+    #navbar:not(.scrolled) .btn-outline:hover { background: rgba(255,255,255,.15); }
+    .nav-cta { flex-shrink: 0; }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      padding: .5rem;
+    }
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: currentColor;
+      transition: all .3s;
+    }
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: #fff;
+      z-index: 99;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.75rem;
+      color: var(--fg);
+      transition: color .2s;
+    }
+    .mobile-menu a:hover { color: var(--primary); }
+    .mobile-close {
+      position: absolute;
+      top: 1.5rem; right: 1.5rem;
+      background: none; border: none;
+      font-size: 1.75rem;
+      color: var(--fg);
+    }
+
+    /* ── HERO ──────────────────────────────────── */
+    #inicio {
+      position: relative;
+      height: 100vh;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      text-align: center;
+    }
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(15,10,5,.55) 0%,
+        rgba(15,10,5,.4) 60%,
+        rgba(15,10,5,.65) 100%
+      );
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      color: #fff;
+      padding: 0 1.5rem;
+    }
+    .hero-eyebrow {
+      font-size: .75rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--champagne);
+      margin-bottom: 1.25rem;
+      font-weight: 500;
+    }
+    .hero-title {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      text-shadow: 0 2px 20px rgba(0,0,0,.3);
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--champagne);
+    }
+    .hero-sub {
+      font-size: clamp(1rem, 1.5vw, 1.15rem);
+      font-weight: 300;
+      color: rgba(255,255,255,.85);
+      margin-bottom: 2.5rem;
+      letter-spacing: .02em;
+    }
+    .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .hero-scroll {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .5rem;
+      color: rgba(255,255,255,.6);
+      font-size: .7rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .hero-scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, rgba(255,255,255,.6), transparent);
+      animation: scrollLine 2s ease-in-out infinite;
+    }
+    @keyframes scrollLine {
+      0%   { transform: scaleY(0); transform-origin: top; }
+      50%  { transform: scaleY(1); transform-origin: top; }
+      50.01% { transform: scaleY(1); transform-origin: bottom; }
+      100% { transform: scaleY(0); transform-origin: bottom; }
+    }
+
+    /* ── STATS BAR ─────────────────────────────── */
+    .stats-bar {
+      background: var(--primary);
+      color: #fff;
+      padding: 1.5rem 0;
+    }
+    .stats-inner {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      text-align: center;
+      gap: 1rem;
+    }
+    .stat-item {}
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.75rem;
+      font-weight: 700;
+    }
+    .stat-label {
+      font-size: .7rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      opacity: .85;
+      margin-top: .15rem;
+    }
+
+    /* ── NOSOTROS ──────────────────────────────── */
+    #nosotros { padding: 4rem 0; }
+    .nosotros-grid {
+      display: grid;
+      grid-template-columns: 5fr 7fr 5fr;
+      gap: 2rem;
+      align-items: stretch;
+    }
+    /* columna izquierda: foto de grupo ocupa toda la altura */
+    .nosotros-group-col {
+      display: flex;
+    }
+    .nosotros-group-col .team-group-photo {
+      flex: 1;
+      min-height: 480px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 16px 48px rgba(196,137,42,.14);
+      position: relative;
+    }
+    .nosotros-group-col .team-group-photo img {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: auto;
+      height: 100%;
+      max-width: none;
+    }
+    /* columna central: texto + valores */
+    .nosotros-text {}
+    .nosotros-values {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1.75rem;
+    }
+    .value-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+    }
+    .value-icon {
+      width: 1.75rem;
+      height: 1.75rem;
+      background: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: .6rem;
+    }
+    .value-icon svg { width: 13px; height: 13px; stroke: #fff; fill: none; }
+    .value-title {
+      font-family: 'Playfair Display', serif;
+      font-size: .9rem;
+      font-weight: 600;
+      margin-bottom: .15rem;
+    }
+    .value-desc { font-size: .78rem; color: var(--muted-fg); }
+    /* columna derecha: Maribel + nombres, flex para llenar la altura */
+    .team-visual {
+      display: flex;
+      flex-direction: column;
+    }
+    /* Maribel portrait — crece para rellenar el espacio */
+    .team-photo-main {
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      flex: 1;
+      min-height: 220px;
+      margin-bottom: 1rem;
+    }
+    .team-photo-main img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 10%;
+    }
+    .team-photo-label {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(15,10,5,.75));
+      color: #fff;
+      padding: 1.25rem .75rem .55rem;
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .05em;
+    }
+    /* nombres del equipo */
+    .team-bottom-row { }
+    .team-bottom-row .team-group-photo { display: none; }
+    .team-members {
+      display: flex;
+      flex-direction: column;
+      gap: .6rem;
+    }
+    .team-member {
+      display: flex;
+      gap: .75rem;
+      align-items: center;
+      padding: .65rem .9rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+    .team-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .team-name { font-weight: 600; font-size: .82rem; }
+    .team-role { font-size: .72rem; color: var(--muted-fg); line-height: 1.4; }
+
+    /* ── PROMOCIONES ───────────────────────────── */
+    #promociones {
+      padding: 4rem 0;
+      background: var(--muted);
+    }
+    .promos-header { text-align: center; margin-bottom: 2rem; }
+    .promos-header .divider { margin: 1rem auto 2rem; }
+    .promos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .promo-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: box-shadow .25s, transform .25s;
+    }
+    .promo-card:hover {
+      box-shadow: 0 12px 40px rgba(196,137,42,.12);
+      transform: translateY(-4px);
+    }
+    .promo-img { aspect-ratio: 4/3; overflow: hidden; }
+    .promo-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+    .promo-card:hover .promo-img img { transform: scale(1.04); }
+    .promo-body { padding: 1.5rem; }
+    .promo-price {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: .5rem;
+    }
+    .promo-name { font-weight: 600; font-size: .95rem; margin-bottom: 1rem; }
+    .promo-cta { width: 100%; text-align: center; }
+
+    /* ── SERVICIOS ─────────────────────────────── */
+    #servicios { padding: 4rem 0; }
+    .servicios-header { text-align: center; margin-bottom: 2rem; }
+    .servicios-header .divider { margin: 1rem auto 2rem; }
+    .accordion { display: flex; flex-direction: column; gap: 1rem; }
+    .accordion-item {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .accordion-trigger {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 1.75rem;
+      background: var(--surface);
+      border: none;
+      text-align: left;
+      gap: 1rem;
+    }
+    .accordion-trigger:hover { background: var(--muted); }
+    .acc-left { display: flex; flex-direction: column; gap: .25rem; }
+    .acc-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+    }
+    .acc-sub { font-size: .8rem; color: var(--muted-fg); }
+    .acc-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: transform .3s;
+    }
+    .acc-icon svg { width: 14px; height: 14px; stroke: #fff; fill: none; }
+    .accordion-item.open .acc-icon { transform: rotate(180deg); }
+    .accordion-content {
+      display: none;
+      padding: 1.75rem;
+      border-top: 1px solid var(--border);
+      background: #fff;
+    }
+    .accordion-item.open .accordion-content { display: block; }
+    .service-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .service-item { display: flex; gap: .75rem; }
+    .service-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--primary);
+      flex-shrink: 0;
+      margin-top: .45rem;
+    }
+    .service-name { font-weight: 600; font-size: .875rem; margin-bottom: .2rem; }
+    .service-desc { font-size: .8rem; color: var(--muted-fg); line-height: 1.5; }
+    .acc-cta { display: flex; gap: .75rem; flex-wrap: wrap; }
+
+    /* ── SOLARIUM special ─── */
+    .solarium-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    .solarium-video { border-radius: var(--radius); overflow: hidden; }
+    .solarium-video video { width: 100%; height: auto; aspect-ratio: 16/9; object-fit: contain; background: #000; display: block; }
+    .solarium-info {}
+    .solarium-desc { font-size: .875rem; color: var(--muted-fg); margin-bottom: 1.25rem; line-height: 1.7; }
+    .prices-table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+    .prices-table th {
+      background: var(--primary);
+      color: #fff;
+      padding: .5rem .75rem;
+      text-align: left;
+      font-weight: 500;
+    }
+    .prices-table td { padding: .5rem .75rem; border-bottom: 1px solid var(--border); }
+    .prices-table tr:last-child td { border-bottom: none; }
+    .prices-table tr:nth-child(even) td { background: var(--surface); }
+
+    /* ── ANTES Y DESPUÉS ───────────────────────── */
+    #casos {
+      padding: 4rem 0;
+      background: var(--muted);
+    }
+    .casos-header { text-align: center; margin-bottom: 2rem; }
+    .casos-header .divider { margin: 1rem auto 2rem; }
+    .casos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .caso-card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      aspect-ratio: 3/4;
+      background: var(--border);
+    }
+    .caso-card img { width: 100%; height: 100%; object-fit: cover; }
+    .caso-label {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(15,10,5,.75));
+      color: #fff;
+      padding: 2rem 1rem .85rem;
+      font-size: .75rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    /* ── OPINIONES ─────────────────────────────── */
+    #opiniones { padding: 4rem 0; }
+    .opiniones-header { text-align: center; margin-bottom: 2rem; }
+    .opiniones-header .divider { margin: 1rem auto 2rem; }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .review-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+    }
+    .stars {
+      display: flex;
+      gap: 2px;
+      margin-bottom: 1rem;
+      color: var(--primary);
+      font-size: 1rem;
+    }
+    .review-text {
+      font-size: .875rem;
+      line-height: 1.7;
+      color: var(--fg);
+      font-style: italic;
+      margin-bottom: 1.25rem;
+    }
+    .review-author { display: flex; align-items: center; gap: .75rem; }
+    .review-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: .875rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .review-name { font-weight: 600; font-size: .875rem; }
+    .review-service { font-size: .75rem; color: var(--muted-fg); }
+
+    /* ── POR QUÉ NOSOTROS ──────────────────────── */
+    #porqué {
+      padding: 5rem 0;
+      background: var(--muted);
+    }
+    .porque-inner {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .porque-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+    .feature-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+    }
+    .feature-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--primary), var(--champagne));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .feature-icon svg { width: 18px; height: 18px; stroke: #fff; fill: none; }
+    .feature-title { font-weight: 600; font-size: .9rem; margin-bottom: .35rem; }
+    .feature-desc { font-size: .8rem; color: var(--muted-fg); line-height: 1.5; }
+
+    /* ── CTA SECTION ───────────────────────────── */
+    #cta {
+      padding: 4rem 0;
+      background: linear-gradient(135deg, var(--fg) 0%, #3a2e22 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    #cta::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(196,137,42,.15), transparent 70%);
+    }
+    #cta::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; left: -60px;
+      width: 250px; height: 250px;
+      background: radial-gradient(circle, rgba(212,168,85,.1), transparent 70%);
+    }
+    .cta-content { position: relative; z-index: 1; }
+    .cta-eyebrow {
+      font-size: .7rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--champagne);
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+    .cta-title {
+      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+    .cta-sub {
+      font-size: .95rem;
+      color: rgba(255,255,255,.65);
+      max-width: 480px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+    .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* ── CONTACTO ──────────────────────────────── */
+    #contacto {
+      padding: 4rem 0;
+    }
+    .contacto-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+    .contacto-info {}
+    .contact-items { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 2rem; }
+    .contact-item { display: flex; gap: 1rem; align-items: flex-start; }
+    .contact-ico {
+      width: 40px;
+      height: 40px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-ico svg { width: 16px; height: 16px; stroke: var(--primary); fill: none; }
+    .contact-label { font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted-fg); margin-bottom: .2rem; }
+    .contact-val { font-weight: 500; font-size: .9rem; }
+    .map-embed {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      height: 100%;
+      min-height: 320px;
+    }
+    .map-embed iframe { width: 100%; height: 100%; border: none; min-height: 320px; }
+
+    /* ── FOOTER ────────────────────────────────── */
+    footer {
+      background: var(--fg);
+      color: rgba(255,255,255,.7);
+      padding: 3rem 0 1.5rem;
+    }
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 2rem;
+    }
+    .footer-brand {}
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--champagne);
+      margin-bottom: .35rem;
+    }
+    .footer-tagline { font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; opacity: .5; }
+    .footer-desc { font-size: .8rem; line-height: 1.7; margin-top: 1rem; max-width: 280px; }
+    .footer-col-title {
+      font-family: 'Playfair Display', serif;
+      font-size: .9rem;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+    .footer-links { display: flex; flex-direction: column; gap: .6rem; }
+    .footer-links a { font-size: .8rem; transition: color .2s; }
+    .footer-links a:hover { color: var(--champagne); }
+    .footer-social {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      margin-top: 1.25rem;
+    }
+    .social-link {
+      width: 36px;
+      height: 36px;
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all .2s;
+    }
+    .social-link:hover { background: var(--primary); border-color: var(--primary); }
+    .social-link svg { width: 16px; height: 16px; stroke: currentColor; fill: none; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.1);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: .75rem;
+    }
+    .footer-legal { display: flex; gap: 1.5rem; }
+    .footer-legal a:hover { color: var(--champagne); }
+
+    /* ── WHATSAPP FLOAT ────────────────────────── */
+    .wa-float {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      z-index: 50;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,.4);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .wa-float:hover { transform: scale(1.1); box-shadow: 0 6px 24px rgba(37,211,102,.5); }
+    .wa-float svg { width: 26px; height: 26px; fill: #fff; }
+
+    /* ── MODAL LEGAL ───────────────────────────── */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.6);
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .25s;
+    }
+    .modal-backdrop.open { opacity: 1; pointer-events: all; }
+    .modal-box {
+      background: #fff;
+      border-radius: 4px;
+      max-width: 640px;
+      width: 100%;
+      max-height: 80vh;
+      overflow-y: auto;
+      padding: 2.5rem;
+      position: relative;
+    }
+    .modal-close {
+      position: absolute;
+      top: 1rem; right: 1rem;
+      background: none; border: none;
+      font-size: 1.5rem;
+      color: var(--muted-fg);
+      line-height: 1;
+    }
+    .modal-box h2 { margin-bottom: 1.25rem; font-size: 1.5rem; }
+    .modal-box h3 { font-size: 1rem; margin: 1.25rem 0 .5rem; }
+    .modal-box p { font-size: .85rem; line-height: 1.7; color: var(--muted-fg); margin-bottom: .75rem; }
+
+    /* ── RESPONSIVE ────────────────────────────── */
+    @media (max-width: 1024px) {
+      .nosotros-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+      .nosotros-group-col { grid-row: 1 / 3; }
+      .nosotros-values { grid-template-columns: repeat(2, 1fr); }
+      .porque-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nosotros-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .nosotros-group-col { grid-row: auto; min-height: 320px; }
+      .nosotros-group-col .team-group-photo { min-height: 320px; }
+    }
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; color: #fff; }
+      #navbar.scrolled .hamburger { color: var(--fg); }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .promos-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+      .service-list { grid-template-columns: 1fr; }
+      .casos-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .nosotros-values { grid-template-columns: 1fr 1fr; }
+      .porque-features { grid-template-columns: 1fr; }
+      .contacto-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .solarium-wrap { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .nosotros-values { grid-template-columns: 1fr; }
+      .stats-inner { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAVBAR ──────────────────────────────────────────── -->
+<nav id="navbar">
+  <div class="container nav-inner">
+    <a href="#inicio" class="nav-logo">
+      <span>Alicia Forcada</span>
+      <span>Centro Médico Estético</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#promociones">Promociones</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#opiniones">Opiniones</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20reservar%20cita" target="_blank" class="btn btn-outline nav-cta">Reservar cita</a>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">&times;</button>
+  <a href="#inicio"       onclick="closeMobile()">Inicio</a>
+  <a href="#nosotros"     onclick="closeMobile()">Nosotros</a>
+  <a href="#promociones"  onclick="closeMobile()">Promociones</a>
+  <a href="#servicios"    onclick="closeMobile()">Servicios</a>
+  <a href="#opiniones"    onclick="closeMobile()">Opiniones</a>
+  <a href="#contacto"     onclick="closeMobile()">Contacto</a>
+  <a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20reservar%20cita" target="_blank" class="btn btn-primary">Reservar cita</a>
+</div>
+
+<!-- ── HERO ────────────────────────────────────────────── -->
+<section id="inicio">
+  <video class="hero-video" autoplay muted loop playsinline
+         poster="https://centroesteticaaliciaforcada.lovable.app/videos/hero-poster.jpg">
+    <source src="https://centroesteticaaliciaforcada.lovable.app/videos/hero-video.mp4" type="video/mp4" />
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Centro Médico Estético · Almassora, Castellón</p>
+    <h1 class="hero-title">Realza tu belleza con<br><em>resultados naturales</em></h1>
+    <p class="hero-sub">Especialistas en medicina estética avanzada en Almassora</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20reservar%20cita" target="_blank" class="btn btn-primary">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 015.19 12.9a19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        Reservar cita
+      </a>
+      <a href="#nosotros" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.6)">Conoce el centro</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ── STATS BAR ───────────────────────────────────────── -->
+<div class="stats-bar">
+  <div class="container stats-inner">
+    <div class="stat-item"><div class="stat-num">+10</div><div class="stat-label">Años de experiencia</div></div>
+    <div class="stat-item"><div class="stat-num">+40</div><div class="stat-label">Opiniones ⭐ 5.0</div></div>
+    <div class="stat-item"><div class="stat-num">3</div><div class="stat-label">Especialistas</div></div>
+    <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">Trato personalizado</div></div>
+  </div>
+</div>
+
+<!-- ── NOSOTROS ────────────────────────────────────────── -->
+<section id="nosotros">
+  <div class="container">
+    <div class="nosotros-grid">
+      <!-- columna izquierda: foto de grupo grande -->
+      <div class="nosotros-group-col">
+        <div class="team-group-photo">
+          <img src="https://centroesteticaaliciaforcada.lovable.app/assets/team-photo-Bmwd8hgO.png"
+               alt="Equipo — morena, china y rubia" loading="lazy" />
+        </div>
+      </div>
+      <!-- columna central: texto + valores -->
+      <div class="nosotros-text">
+        <span class="section-tag">Sobre nosotros</span>
+        <h2 class="section-title">Tu piel, en manos expertas</h2>
+        <div class="divider"></div>
+        <p class="section-subtitle">En el Centro Médico Estético Alicia Forcada combinamos la ciencia más avanzada con un trato cercano y personalizado. Cada tratamiento se diseña para ti, respetando tu naturalidad y potenciando tu mejor versión.</p>
+        <div class="nosotros-values">
+          <div class="value-card">
+            <div class="value-icon"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 01-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 011-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 011.52 0C14.51 3.81 17 5 19 5a1 1 0 011 1z"/></svg></div>
+            <div class="value-title">Profesionalidad</div>
+            <div class="value-desc">Equipo médico cualificado</div>
+          </div>
+          <div class="value-card">
+            <div class="value-icon"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0016.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 002 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></div>
+            <div class="value-title">Cercanía</div>
+            <div class="value-desc">Trato personalizado</div>
+          </div>
+          <div class="value-card">
+            <div class="value-icon"><svg viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div>
+            <div class="value-title">Experiencia</div>
+            <div class="value-desc">Años de dedicación</div>
+          </div>
+          <div class="value-card">
+            <div class="value-icon"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <div class="value-title">Confianza</div>
+            <div class="value-desc">Atención discreta</div>
+          </div>
+        </div>
+      </div>
+      <div class="team-visual">
+        <!-- Maribel portrait -->
+        <div class="team-photo-main">
+          <img src="./maribel.jpg.jpeg"
+               alt="Maribel Redondo — Especialista" loading="lazy" />
+          <div class="team-photo-label">Maribel Redondo</div>
+        </div>
+        <!-- nombres del equipo -->
+        <div class="team-bottom-row">
+          <div class="team-members">
+          <div class="team-member">
+            <div class="team-avatar">AF</div>
+            <div>
+              <div class="team-name">Alicia Forcada</div>
+              <div class="team-role">Directora y especialista — Años de experiencia como referente en estética en Almassora.</div>
+            </div>
+          </div>
+          <div class="team-member">
+            <div class="team-avatar">MR</div>
+            <div>
+              <div class="team-name">Maribel Redondo</div>
+              <div class="team-role">Especialista — Profesional dedicada al cuidado y bienestar de nuestras pacientes.</div>
+            </div>
+          </div>
+          <div class="team-member">
+            <div class="team-avatar">CH</div>
+            <div>
+              <div class="team-name">Chialindco Hsiehl</div>
+              <div class="team-role">Doctora — Especialista en medicina estética con formación internacional.</div>
+            </div>
+          </div>
+          <div class="team-member">
+            <div class="team-avatar">AS</div>
+            <div>
+              <div class="team-name">Ana Sanchis</div>
+              <div class="team-role">Enfermera titulada y docente — Más de 10 años de experiencia en el sector.</div>
+            </div>
+          </div>
+        </div><!-- /team-members -->
+        </div><!-- /team-bottom-row -->
+      </div><!-- /team-visual -->
+    </div><!-- /nosotros-grid -->
+  </div><!-- /container -->
+</section>
+
+<!-- ── PROMOCIONES ──────────────────────────────────────── -->
+<section id="promociones">
+  <div class="container">
+    <div class="promos-header">
+      <span class="section-tag">Ofertas especiales</span>
+      <h2 class="section-title">Promociones</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="promos-grid">
+      <div class="promo-card">
+        <div class="promo-img">
+          <img src="https://centroesteticaaliciaforcada.lovable.app/assets/promo-higiene-mesoterapia-BQ9AtEdS.png"
+               alt="Pack Higiene + Mesoterapia" loading="lazy" />
+        </div>
+        <div class="promo-body">
+          <div class="promo-price">150 €</div>
+          <div class="promo-name">Pack Higiene + Mesoterapia</div>
+          <a href="https://wa.me/34643083872?text=Hola%2C%20me%20interesa%20la%20promoci%C3%B3n%20Pack%20Higiene%20%2B%20Mesoterapia" target="_blank" class="btn btn-primary promo-cta">Reservar promoción</a>
+        </div>
+      </div>
+      <div class="promo-card">
+        <div class="promo-img">
+          <img src="https://centroesteticaaliciaforcada.lovable.app/assets/promo-mesoterapia-bono-D3Gizzwg.png"
+               alt="Mesoterapia Bono 3 sesiones" loading="lazy" />
+        </div>
+        <div class="promo-body">
+          <div class="promo-price">300 €</div>
+          <div class="promo-name">Mesoterapia Bono 3 sesiones</div>
+          <a href="https://wa.me/34643083872?text=Hola%2C%20me%20interesa%20la%20promoci%C3%B3n%20Mesoterapia%20Bono%203%20sesiones" target="_blank" class="btn btn-primary promo-cta">Reservar promoción</a>
+        </div>
+      </div>
+      <div class="promo-card">
+        <div class="promo-img">
+          <img src="https://centroesteticaaliciaforcada.lovable.app/assets/promo-mesoterapia-premium-BmUaUeI0.png"
+               alt="Mesoterapia Premium" loading="lazy" />
+        </div>
+        <div class="promo-body">
+          <div class="promo-price">150 €</div>
+          <div class="promo-name">Mesoterapia Premium — Mascarilla + LED</div>
+          <a href="https://wa.me/34643083872?text=Hola%2C%20me%20interesa%20la%20promoci%C3%B3n%20Mesoterapia%20Premium" target="_blank" class="btn btn-primary promo-cta">Reservar promoción</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SERVICIOS ────────────────────────────────────────── -->
+<section id="servicios">
+  <div class="container">
+    <div class="servicios-header">
+      <span class="section-tag">Nuestros servicios</span>
+      <h2 class="section-title">Ciencia al servicio de tu belleza</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="accordion">
+
+      <!-- Medicina Estética -->
+      <div class="accordion-item open">
+        <button class="accordion-trigger" onclick="toggleAcc(this)">
+          <div class="acc-left">
+            <div class="acc-title">Medicina Estética</div>
+            <div class="acc-sub">Dra. Chialindco Hsiehl — Tratamientos avanzados mínimamente invasivos</div>
+          </div>
+          <div class="acc-icon">
+            <svg viewBox="0 0 24 24" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </button>
+        <div class="accordion-content">
+          <div class="service-list">
+            <div class="service-item"><div class="service-dot"></div><div><div class="service-name">Rellenos de ácido hialurónico</div><div class="service-desc">Restaura volúmenes, define contornos y suaviza arrugas con aspecto natural.</div></div></div>
+            <div class="service-item"><div class="service-dot"></div><div><div class="service-name">Toxina botulínica (Bótox)</div><div class="service-desc">Relaja la musculatura facial y suaviza líneas de expresión de forma natural.</div></div></div>
+            <div class="service-item"><div class="service-dot"></div><div><div class="service-name">Hilos tensores</div><div class="service-desc">Efecto lifting inmediato redefiniendo el óvalo facial y estimulando colágeno.</div></div></div>
+            <div class="service-item"><div class="service-dot"></div><div><div class="service-name">Inductores de colágeno</div><div class="service-desc">Bioestimuladores que mejoran firmeza, elasticidad y calidad de la piel.</div></div></div>
+            <div class="service-item"><div class="service-dot"></div><div><div class="service-name">Endolift y Lipoláser</div><div class="service-desc">Láser mínimamente invasivo para tensar tejidos y reducir grasa localizada.</div></div></div>
+            <div class="service-item"><div class="service-dot"></div><div><div class="service-name">Skinbooster</div><div class="service-desc">Microinyecciones de ácido hialurónico que hidratan en profundidad la piel.</div></div></div>
+            <div class="service-item"><div class="service-dot"></div><div><div class="service-name">Mesoterapia (facial, corporal y capilar)</div><div class="service-desc">Vitaminas y minerales infiltrados para revitalizar piel y cabello.</div></div></div>
+            <div class="service-item"><div class="service-dot"></div><div><div class="service-name">Plasma rico en plaquetas (PRP)</div><div class="service-desc">Tratamiento no quirúrgico que tensa la piel y corrige párpados caídos.</div></div></div>
+          </div>
+          <div class="acc-cta">
+            <a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20m%C3%A1s%20info%20sobre%20medicina%20est%C3%A9tica" target="_blank" class="btn btn-primary">Más información</a>
+            <a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20reservar%20cita" target="_blank" class="btn btn-outline">Reservar cita</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Enfermería Estética -->
+      <div class="accordion-item">
+        <button class="accordion-trigger" onclick="toggleAcc(this)">
+          <div class="acc-left">
+            <div class="acc-title">Enfermería Estética</div>
+            <div class="acc-sub">Ana Sanchis — Tratamientos faciales avanzados y cuidado especializado</div>
+          </div>
+          <div class="acc-icon">
+            <svg viewBox="0 0 24 24" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </button>
+        <div class="accordion-content">
+          <div class="service-list">
+            <div class="service-item"><div class="service-dot"></div><div><div class="service-name">Higienes faciales</div><div class="service-desc">Limpieza profunda, extracción y tratamiento adaptado a tu tipo de piel.</div></div></div>
+            <div class="service-item"><div class="service-dot"></div><div><div class="service-name">Mesoterapia facial</div><div class="service-desc">Infiltraciones de vitaminas para revitalizar e hidratar la piel en profundidad.</div></div></div>
+            <div class="service-item"><div class="service-dot"></div><div><div class="service-name">Mesoterapia capilar y Dermapen</div><div class="service-desc">Estimulación del cuero cabelludo para frenar la caída y fortalecer el cabello.</div></div></div>
+            <div class="service-item"><div class="service-dot"></div><div><div class="service-name">BB Baby Glow</div><div class="service-desc">Efecto glow instantáneo con piel jugosa, hidratada y radiante.</div></div></div>
+            <div class="service-item"><div class="service-dot"></div><div><div class="service-name">BB Baby Lips</div><div class="service-desc">Hidrata, aporta volumen natural y mejora la definición del contorno labial.</div></div></div>
+            <div class="service-item"><div class="service-dot"></div><div><div class="service-name">Micropigmentación de cejas, eyeliner y labios</div><div class="service-desc">Maquillaje semipermanente de alta precisión y aspecto natural.</div></div></div>
+            <div class="service-item"><div class="service-dot"></div><div><div class="service-name">Manicura y pedicura</div><div class="service-desc">Cuidado integral con opciones de semipermanente y diseños personalizados.</div></div></div>
+          </div>
+          <div class="acc-cta">
+            <a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20m%C3%A1s%20info%20sobre%20enfermer%C3%ADa%20est%C3%A9tica" target="_blank" class="btn btn-primary">Más información</a>
+            <a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20reservar%20cita" target="_blank" class="btn btn-outline">Reservar cita</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tratamientos Personalizados -->
+      <div class="accordion-item">
+        <button class="accordion-trigger" onclick="toggleAcc(this)">
+          <div class="acc-left">
+            <div class="acc-title">Tratamientos Personalizados</div>
+            <div class="acc-sub">Rituales corporales, masajes y bienestar integral</div>
+          </div>
+          <div class="acc-icon">
+            <svg viewBox="0 0 24 24" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </button>
+        <div class="accordion-content">
+          <div class="service-list">
+            <div class="service-item"><div class="service-dot"></div><div><div class="service-name">Exfoliaciones corporales</div><div class="service-desc">Exfoliación profunda con activos hidratantes para renovar y suavizar la piel.</div></div></div>
+            <div class="service-item"><div class="service-dot"></div><div><div class="service-name">Masajes relajantes</div><div class="service-desc">Terapias manuales para liberar tensión, estrés y recuperar el bienestar.</div></div></div>
+            <div class="service-item"><div class="service-dot"></div><div><div class="service-name">Masajes descontracturales</div><div class="service-desc">Alivian contracturas y dolores musculares adaptados a tus necesidades.</div></div></div>
+            <div class="service-item"><div class="service-dot"></div><div><div class="service-name">Maderoterapia</div><div class="service-desc">Moldea la silueta, reduce celulitis y favorece el drenaje linfático de forma natural.</div></div></div>
+          </div>
+          <div class="acc-cta">
+            <a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20m%C3%A1s%20info%20sobre%20tratamientos%20personalizados" target="_blank" class="btn btn-primary">Más información</a>
+            <a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20reservar%20cita" target="_blank" class="btn btn-outline">Reservar cita</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Solarium -->
+      <div class="accordion-item">
+        <button class="accordion-trigger" onclick="toggleAcc(this)">
+          <div class="acc-left">
+            <div class="acc-title">Solarium</div>
+            <div class="acc-sub">Bronceado uniforme durante todo el año — Cabinas UV de última generación</div>
+          </div>
+          <div class="acc-icon">
+            <svg viewBox="0 0 24 24" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </button>
+        <div class="accordion-content">
+          <div class="solarium-wrap">
+            <div class="solarium-video">
+              <video autoplay muted loop playsinline
+                     poster="https://centroesteticaaliciaforcada.lovable.app/videos/solarium-poster.jpg">
+                <source src="https://centroesteticaaliciaforcada.lovable.app/videos/solarium.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div class="solarium-info">
+              <p class="solarium-desc">Consigue un bronceado uniforme y luminoso durante todo el año con nuestras cabinas de rayos UV de última generación. Sesiones controladas y adaptadas a tu fototipo de piel para un resultado natural y seguro, con la máxima protección y asesoramiento profesional.</p>
+              <table class="prices-table">
+                <thead>
+                  <tr><th>Tarifa</th><th>Precio</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Sesión suelta</td><td><strong>12 €</strong></td></tr>
+                  <tr><td>Bono 4 sesiones</td><td><strong>29 €</strong></td></tr>
+                  <tr><td>Bono 8 sesiones</td><td><strong>55 €</strong></td></tr>
+                  <tr><td>Bono ilimitado</td><td><strong>85 €</strong></td></tr>
+                  <tr><td>Bono 60 sesiones</td><td><strong>290 €</strong></td></tr>
+                </tbody>
+              </table>
+              <div style="margin-top:1.25rem">
+                <a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20solarium" target="_blank" class="btn btn-primary">Reserva tu sesión</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── ANTES Y DESPUÉS ──────────────────────────────────── -->
+<section id="casos">
+  <div class="container">
+    <div class="casos-header">
+      <span class="section-tag">Casos reales</span>
+      <h2 class="section-title">Antes y Después</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="casos-grid">
+      <div class="caso-card">
+        <img src="https://centroesteticaaliciaforcada.lovable.app/assets/antes-despues-1-CVVfU4yr.png"
+             alt="Antes y después — Aumento de labios 1" loading="lazy" />
+        <div class="caso-label">Antes y Después</div>
+      </div>
+      <div class="caso-card">
+        <img src="https://centroesteticaaliciaforcada.lovable.app/assets/antes-despues-2-C9fWAft3.png"
+             alt="Antes y después — Aumento de labios 2" loading="lazy" />
+        <div class="caso-label">Antes y Después</div>
+      </div>
+      <div class="caso-card">
+        <img src="https://centroesteticaaliciaforcada.lovable.app/assets/antes-despues-3--_iUKnR9.png"
+             alt="Antes y después — Aumento de labios 3" loading="lazy" />
+        <div class="caso-label">Antes y Después</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── OPINIONES ───────────────────────────────────────── -->
+<section id="opiniones">
+  <div class="container">
+    <div class="opiniones-header">
+      <span class="section-tag">Opiniones</span>
+      <h2 class="section-title">Lo que dicen nuestras pacientes</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"Trato fantástico y resultados excelentes. Desde la primera consulta me sentí en buenas manos. Los resultados superaron mis expectativas."</p>
+        <div class="review-author">
+          <div class="review-avatar">M</div>
+          <div>
+            <div class="review-name">María L.</div>
+            <div class="review-service">Tratamiento facial</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"Gran profesionalidad y amabilidad. Alicia te explica todo con detalle y te asesora de forma honesta. Volveré sin duda."</p>
+        <div class="review-author">
+          <div class="review-avatar">C</div>
+          <div>
+            <div class="review-name">Carmen R.</div>
+            <div class="review-service">Medicina estética</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"Precios competitivos y atención increíble. El ambiente es muy acogedor y discreto. Lo recomiendo al 100%."</p>
+        <div class="review-author">
+          <div class="review-avatar">L</div>
+          <div>
+            <div class="review-name">Laura S.</div>
+            <div class="review-service">Rejuvenecimiento</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── POR QUÉ NOSOTROS ─────────────────────────────────── -->
+<section id="porqué">
+  <div class="container">
+    <div class="porque-inner">
+      <div>
+        <span class="section-tag">Tu confianza</span>
+        <h2 class="section-title">Nuestra prioridad</h2>
+        <div class="divider"></div>
+        <p class="section-subtitle">Cuatro razones por las que cientos de pacientes nos eligen en Almassora y Castellón.</p>
+        <div style="margin-top:2rem">
+          <a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20reservar%20cita" target="_blank" class="btn btn-primary">Reservar cita hoy</a>
+        </div>
+      </div>
+      <div class="porque-features">
+        <div class="feature-card">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M19 21v-2a4 4 0 00-4-4H9a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          <div class="feature-title">Atención personalizada</div>
+          <div class="feature-desc">Cada tratamiento se adapta a tus necesidades únicas.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M9.937 15.5A2 2 0 008.5 14.063l-6.135-1.582a.5.5 0 010-.962L8.5 9.936A2 2 0 009.937 8.5l1.582-6.135a.5.5 0 01.963 0L14.063 8.5A2 2 0 0015.5 9.937l6.135 1.581a.5.5 0 010 .964L15.5 14.063a2 2 0 00-1.437 1.437l-1.582 6.135a.5.5 0 01-.963 0z"/><path d="M20 3v4M22 5h-4M4 17v2M5 18H3"/></svg></div>
+          <div class="feature-title">Resultados naturales</div>
+          <div class="feature-desc">Potenciamos tu belleza sin alterar tu esencia.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 01-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 011-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 011.52 0C14.51 3.81 17 5 19 5a1 1 0 011 1z"/></svg></div>
+          <div class="feature-title">Equipo cualificado</div>
+          <div class="feature-desc">Profesionales con formación continua y experiencia.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 01-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0116 0"/></svg></div>
+          <div class="feature-title">Referencia en la zona</div>
+          <div class="feature-desc">Clínica de confianza en Almassora y Castellón.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA SECTION ──────────────────────────────────────── -->
+<section id="cta">
+  <div class="container cta-content">
+    <p class="cta-eyebrow">Da el primer paso</p>
+    <h2 class="cta-title">Reserva tu cita hoy</h2>
+    <p class="cta-sub">Nuestro equipo te espera para asesorarte de forma personalizada y sin compromiso. Tu mejor versión te espera.</p>
+    <div class="cta-actions">
+      <a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20reservar%20cita" target="_blank" class="btn btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Reservar por WhatsApp
+      </a>
+      <a href="tel:+34643083872" class="btn btn-white">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 015.19 12.9a19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        Llamar ahora
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACTO ─────────────────────────────────────────── -->
+<section id="contacto">
+  <div class="container">
+    <div class="contacto-grid">
+      <div class="contacto-info">
+        <span class="section-tag">Contacto</span>
+        <h2 class="section-title">Encuéntranos</h2>
+        <div class="divider"></div>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-ico"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 01-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0116 0"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div>
+              <div class="contact-label">Dirección</div>
+              <div class="contact-val">Carrer de Santa Quitèria 223<br>12550 Almassora, Castellón</div>
+              <a href="https://maps.google.com/?q=Carrer+de+Santa+Quitèria+223,+Almassora" target="_blank" style="font-size:.8rem;color:var(--primary);margin-top:.25rem;display:inline-block">Cómo llegar →</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-ico"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 015.19 12.9a19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></div>
+            <div>
+              <div class="contact-label">Teléfono</div>
+              <a href="tel:+34643083872" class="contact-val">643 08 38 72</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-ico"><svg viewBox="0 0 24 24" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></div>
+            <div>
+              <div class="contact-label">Email</div>
+              <div class="contact-val">info@aliciaforcada.es</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-ico"><svg viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <div>
+              <div class="contact-label">Horario</div>
+              <div class="contact-val">Lunes a Viernes: 10:00 — 20:00</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="map-embed">
+        <iframe
+          src="https://maps.google.com/maps?q=Carrer+de+Santa+Quit%C3%A8ria+223%2C+12550+Almassora%2C+Castell%C3%B3n%2C+Spain&output=embed&hl=es"
+          loading="lazy"
+          title="Ubicación Centro Médico Estético Alicia Forcada"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ───────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">Alicia Forcada</div>
+        <div class="footer-tagline">Centro Médico Estético</div>
+        <p class="footer-desc">Especialistas en medicina estética avanzada en Almassora, Castellón. Tu belleza natural, potenciada con ciencia y cuidado.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/clinica_aliciaforcada" target="_blank" class="social-link" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://wa.me/34643083872" target="_blank" class="social-link" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Servicios</div>
+        <div class="footer-links">
+          <a href="#servicios">Medicina Estética</a>
+          <a href="#servicios">Enfermería Estética</a>
+          <a href="#servicios">Tratamientos Personalizados</a>
+          <a href="#servicios">Solarium</a>
+          <a href="#promociones">Promociones</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Contacto</div>
+        <div class="footer-links">
+          <span style="font-size:.8rem">Carrer de Santa Quitèria 223</span>
+          <span style="font-size:.8rem">12550 Almassora, Castellón</span>
+          <a href="tel:+34643083872" style="font-size:.8rem">643 08 38 72</a>
+          <span style="font-size:.8rem">Lun–Vie: 10:00 — 20:00</span>
+        </div>
+        <div style="margin-top:1.5rem">
+          <a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20reservar%20cita" target="_blank" class="btn btn-primary" style="font-size:.8rem;padding:.6rem 1.25rem">Reservar cita</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Centro Médico Estético Alicia Forcada. Todos los derechos reservados.</span>
+      <div class="footer-legal">
+        <a href="#" onclick="openModal('privacidad')">Política de privacidad</a>
+        <a href="#" onclick="openModal('legal')">Aviso legal</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ── WHATSAPP FLOAT ────────────────────────────────────── -->
+<a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20reservar%20cita" target="_blank" class="wa-float" aria-label="Reservar por WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<!-- ── MODALES LEGALES ────────────────────────────────────── -->
+<div class="modal-backdrop" id="modalPrivacidad" onclick="closeModalOutside(event,'modalPrivacidad')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('privacidad')">&times;</button>
+    <h2>Política de Privacidad</h2>
+    <p>En cumplimiento del Reglamento General de Protección de Datos (RGPD) y la Ley Orgánica 3/2018 de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD), le informamos de lo siguiente:</p>
+    <h3>Responsable del tratamiento</h3>
+    <p>Centro Médico Estético Alicia Forcada<br>Carrer de Santa Quitèria 223, 12550 Almassora (Castellón)<br>Teléfono: 643 08 38 72</p>
+    <h3>Finalidad del tratamiento</h3>
+    <p>Los datos personales recogidos a través de este sitio web o por contacto directo serán tratados con la finalidad de gestionar citas, prestar servicios médico-estéticos y enviar comunicaciones comerciales cuando el usuario haya dado su consentimiento.</p>
+    <h3>Legitimación</h3>
+    <p>El tratamiento de sus datos se basa en el consentimiento del interesado y/o la ejecución de un contrato de prestación de servicios.</p>
+    <h3>Conservación de datos</h3>
+    <p>Los datos personales se conservarán durante el tiempo necesario para cumplir con la finalidad para la que fueron recogidos y para determinar posibles responsabilidades derivadas de dicha finalidad.</p>
+    <h3>Derechos del interesado</h3>
+    <p>Puede ejercer sus derechos de acceso, rectificación, supresión, limitación, portabilidad y oposición contactando con nosotros a través del teléfono o dirección indicados.</p>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="modalLegal" onclick="closeModalOutside(event,'modalLegal')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('legal')">&times;</button>
+    <h2>Aviso Legal</h2>
+    <h3>Identificación del titular</h3>
+    <p>Centro Médico Estético Alicia Forcada<br>Carrer de Santa Quitèria 223, 12550 Almassora (Castellón)<br>Teléfono: 643 08 38 72</p>
+    <h3>Objeto</h3>
+    <p>El presente aviso legal regula el uso y acceso al sitio web del Centro Médico Estético Alicia Forcada, poniendo a disposición de los usuarios información sobre sus servicios de medicina y estética.</p>
+    <h3>Propiedad intelectual</h3>
+    <p>Todos los contenidos del sitio web, incluyendo textos, fotografías, gráficos, imágenes, iconos, tecnología, software, así como su diseño gráfico y códigos fuente, constituyen una obra cuya propiedad pertenece al Centro Médico Estético Alicia Forcada, sin que puedan entenderse cedidos al usuario ninguno de los derechos de explotación sobre los mismos.</p>
+    <h3>Responsabilidad</h3>
+    <p>El Centro Médico Estético Alicia Forcada no se hace responsable de los daños o perjuicios que pudieran derivarse del acceso o uso indebido de los contenidos del sitio web.</p>
+    <h3>Legislación aplicable</h3>
+    <p>Para la resolución de cualquier controversia relacionada con el sitio web, será de aplicación la legislación española, siendo competentes los Juzgados y Tribunales de Castellón.</p>
+  </div>
+</div>
+
+<script>
+  // ── Navbar scroll ──────────────────────────────────────
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
+
+  // ── Mobile menu ────────────────────────────────────────
+  document.getElementById('hamburgerBtn').addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.add('open');
+  });
+  document.getElementById('mobileClose').addEventListener('click', closeMobile);
+  function closeMobile() {
+    document.getElementById('mobileMenu').classList.remove('open');
+  }
+
+  // ── Accordion ──────────────────────────────────────────
+  function toggleAcc(btn) {
+    const item = btn.closest('.accordion-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  // ── Modals ─────────────────────────────────────────────
+  function openModal(type) {
+    const id = type === 'privacidad' ? 'modalPrivacidad' : 'modalLegal';
+    document.getElementById(id).classList.add('open');
+    document.body.style.overflow = 'hidden';
+    return false;
+  }
+  function closeModal(type) {
+    const id = type === 'privacidad' ? 'modalPrivacidad' : 'modalLegal';
+    document.getElementById(id).classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function closeModalOutside(e, id) {
+    if (e.target.id === id) {
+      document.getElementById(id).classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  }
+</script>
+
+</body>
+</html>
