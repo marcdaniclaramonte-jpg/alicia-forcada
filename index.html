@@ -388,11 +388,13 @@
       overflow: hidden;
       position: relative;
       aspect-ratio: 4/3;
+      background: #000;
     }
-    .team-photo-main img {
+    .team-photo-main video {
       width: 100%; height: 100%;
       object-fit: cover;
-      object-position: center 10%;
+      object-position: center top;
+      display: block;
     }
     .team-photo-label {
       position: absolute;
@@ -403,7 +405,22 @@
       font-size: .7rem;
       font-weight: 600;
       letter-spacing: .05em;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
     }
+    .sound-btn {
+      background: rgba(255,255,255,.18);
+      border: 1px solid rgba(255,255,255,.4);
+      border-radius: 50%;
+      width: 30px; height: 30px;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: background .2s;
+    }
+    .sound-btn:hover { background: rgba(255,255,255,.32); }
+    .sound-btn svg { width: 14px; height: 14px; stroke: #fff; fill: none; }
     .team-bottom-row { }
     .team-group-photo { display: none; }
     .team-members { display: flex; flex-direction: column; gap: .6rem; }
@@ -1017,9 +1034,19 @@
       <div class="team-visual">
         <!-- Maribel portrait -->
         <div class="team-photo-main">
-          <img src="./maribel.jpg.jpeg"
-               alt="Maribel Redondo — Especialista" loading="lazy" />
-          <div class="team-photo-label">Maribel Redondo</div>
+          <video id="maribelVideo" autoplay muted loop playsinline>
+            <source src="./maribel redondo.mp4" type="video/mp4" />
+          </video>
+          <div class="team-photo-label">
+            <span>Maribel Redondo</span>
+            <button class="sound-btn" id="soundBtn" onclick="toggleSound()" title="Activar sonido">
+              <svg id="soundIcon" viewBox="0 0 24 24" stroke-width="2">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+                <line x1="23" y1="9" x2="17" y2="15"/>
+                <line x1="17" y1="9" x2="23" y2="15"/>
+              </svg>
+            </button>
+          </div>
         </div>
         <!-- nombres del equipo -->
         <div class="team-bottom-row">
@@ -1120,7 +1147,7 @@
         <button class="accordion-trigger" onclick="toggleAcc(this)">
           <div class="acc-left">
             <div class="acc-title">Medicina Estética</div>
-            <div class="acc-sub">Dra. Chialindco Hsiehl — Tratamientos avanzados mínimamente invasivos</div>
+            <div class="acc-sub">Dra. Chialindco Hsiehl · Alicia Forcada — Tratamientos avanzados mínimamente invasivos</div>
           </div>
           <div class="acc-icon">
             <svg viewBox="0 0 24 24" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
@@ -1149,7 +1176,7 @@
         <button class="accordion-trigger" onclick="toggleAcc(this)">
           <div class="acc-left">
             <div class="acc-title">Enfermería Estética</div>
-            <div class="acc-sub">Ana Sanchis — Tratamientos faciales avanzados y cuidado especializado</div>
+            <div class="acc-sub">Ana Sanchis · Alicia Forcada — Tratamientos faciales avanzados y cuidado especializado</div>
           </div>
           <div class="acc-icon">
             <svg viewBox="0 0 24 24" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
@@ -1172,12 +1199,12 @@
         </div>
       </div>
 
-      <!-- Tratamientos Personalizados -->
+      <!-- Tratamientos Variados -->
       <div class="accordion-item">
         <button class="accordion-trigger" onclick="toggleAcc(this)">
           <div class="acc-left">
-            <div class="acc-title">Tratamientos Personalizados</div>
-            <div class="acc-sub">Rituales corporales, masajes y bienestar integral</div>
+            <div class="acc-title">Tratamientos Variados</div>
+            <div class="acc-sub">Maribel Redondo — Micropigmentación avanzada y oncológica, más de 15 años de trayectoria</div>
           </div>
           <div class="acc-icon">
             <svg viewBox="0 0 24 24" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
@@ -1185,14 +1212,14 @@
         </button>
         <div class="accordion-content">
           <div class="service-list">
-            <div class="service-item"><div class="service-dot"></div><div><div class="service-name">Exfoliaciones corporales</div><div class="service-desc">Exfoliación profunda con activos hidratantes para renovar y suavizar la piel.</div></div></div>
-            <div class="service-item"><div class="service-dot"></div><div><div class="service-name">Masajes relajantes</div><div class="service-desc">Terapias manuales para liberar tensión, estrés y recuperar el bienestar.</div></div></div>
-            <div class="service-item"><div class="service-dot"></div><div><div class="service-name">Masajes descontracturales</div><div class="service-desc">Alivian contracturas y dolores musculares adaptados a tus necesidades.</div></div></div>
-            <div class="service-item"><div class="service-dot"></div><div><div class="service-name">Maderoterapia</div><div class="service-desc">Moldea la silueta, reduce celulitis y favorece el drenaje linfático de forma natural.</div></div></div>
+            <div class="service-item"><div class="service-dot"></div><div><div class="service-name">Cejas</div><div class="service-desc">Hairstroke, pelo a pelo y efecto polvo (shadow) para unas cejas perfectas y naturales.</div></div></div>
+            <div class="service-item"><div class="service-dot"></div><div><div class="service-name">Labios</div><div class="service-desc">Acuarela, baby lips y degradé para potenciar la forma y el color de tus labios.</div></div></div>
+            <div class="service-item"><div class="service-dot"></div><div><div class="service-name">Eye liner</div><div class="service-desc">Todas las modalidades de eye liner semipermanente con la máxima precisión.</div></div></div>
+            <div class="service-item"><div class="service-dot"></div><div><div class="service-name">Prótesis de areola y pezón</div><div class="service-desc">Acabados únicos y realistas diseñados para devolver la confianza tras la superación del cáncer de mama.</div></div></div>
           </div>
           <div class="acc-cta">
-            <a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20m%C3%A1s%20info%20sobre%20tratamientos%20personalizados" target="_blank" class="btn btn-primary">Más información</a>
-            <a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20reservar%20cita" target="_blank" class="btn btn-outline">Reservar cita</a>
+            <a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20m%C3%A1s%20info%20sobre%20tratamientos%20variados%20con%20Maribel%20Redondo" target="_blank" class="btn btn-primary">Más información</a>
+            <a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20reservar%20cita%20con%20Maribel%20Redondo" target="_blank" class="btn btn-outline">Reservar cita</a>
           </div>
         </div>
       </div>
@@ -1534,6 +1561,17 @@
   }
 
   // ── Accordion ──────────────────────────────────────────
+  // ── Sonido vídeo Maribel ──────────────────────────────
+  function toggleSound() {
+    const v = document.getElementById('maribelVideo');
+    const icon = document.getElementById('soundIcon');
+    v.muted = !v.muted;
+    // icono: altavoz con X (mute) o con ondas (sonido)
+    icon.innerHTML = v.muted
+      ? '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/>'
+      : '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 010 14.14"/><path d="M15.54 8.46a5 5 0 010 7.07"/>';
+  }
+
   function toggleAcc(btn) {
     const item = btn.closest('.accordion-item');
     const isOpen = item.classList.contains('open');
