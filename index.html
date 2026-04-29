@@ -5,9 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Centro Médico Estético Alicia Forcada | Medicina Estética en Almassora, Castellón</title>
   <meta name="description" content="Centro Médico Estético Alicia Forcada en Almassora, Castellón. Especialistas en medicina estética avanzada, tratamientos faciales y rejuvenecimiento. Reserva tu cita." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Centro Médico Estético Alicia Forcada" />
+  <meta name="keywords" content="medicina estética, Almassora, Castellón, rejuvenecimiento facial, bótox, ácido hialurónico, micropigmentación, mesoterapia, estética avanzada" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:title" content="Centro Médico Estético Alicia Forcada | Almassora, Castellón" />
+  <meta property="og:description" content="Especialistas en medicina estética avanzada en Almassora. Tratamientos faciales, rejuvenecimiento y micropigmentación. Reserva tu cita." />
+  <meta property="og:image" content="./fotologo.jpeg" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Centro Médico Estético Alicia Forcada | Almassora, Castellón" />
+  <meta name="twitter:description" content="Especialistas en medicina estética avanzada en Almassora. Tratamientos faciales, rejuvenecimiento y micropigmentación." />
+  <meta name="twitter:image" content="./fotologo.jpeg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "name": "Centro Médico Estético Alicia Forcada",
+    "description": "Centro Médico Estético en Almassora, Castellón. Especialistas en medicina estética avanzada, tratamientos faciales, rejuvenecimiento y micropigmentación.",
+    "telephone": "+34643083872",
+    "email": "info@centroesteticaaliciaforcada.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Carrer de Santa Quitèria 223",
+      "addressLocality": "Almassora",
+      "addressRegion": "Castellón",
+      "postalCode": "12550",
+      "addressCountry": "ES"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 39.9488,
+      "longitude": -0.0619
+    },
+    "priceRange": "€€",
+    "currenciesAccepted": "EUR",
+    "paymentAccepted": "Cash, Credit Card",
+    "medicalSpecialty": "Aesthetic Medicine",
+    "sameAs": [
+      "https://www.instagram.com/clinica_aliciaforcada"
+    ]
+  }
+  </script>
   <style>
     :root {
       --primary:   #C4892A;
@@ -450,9 +494,11 @@
     }
     .prof-video {
       width: 100%;
-      aspect-ratio: 16/9;
-      object-fit: cover;
+      height: auto;
+      max-height: 400px;
+      object-fit: contain;
       display: block;
+      background: #000;
     }
     .prof-sound-btn {
       position: absolute;
@@ -946,7 +992,7 @@
       <li><a href="#opiniones">Opiniones</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
-    <a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20reservar%20cita" target="_blank" class="btn btn-outline nav-cta">Reservar cita</a>
+    <a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20reservar%20cita" target="_blank" rel="noopener noreferrer" class="btn btn-outline nav-cta">Reservar cita</a>
     <button class="hamburger" id="hamburgerBtn" aria-label="Menú">
       <span></span><span></span><span></span>
     </button>
@@ -962,7 +1008,7 @@
   <a href="#servicios"    onclick="closeMobile()">Servicios</a>
   <a href="#opiniones"    onclick="closeMobile()">Opiniones</a>
   <a href="#contacto"     onclick="closeMobile()">Contacto</a>
-  <a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20reservar%20cita" target="_blank" class="btn btn-primary">Reservar cita</a>
+  <a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20reservar%20cita" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Reservar cita</a>
 </div>
 
 <!-- ── HERO ────────────────────────────────────────────── -->
@@ -974,7 +1020,7 @@
     <h1 class="hero-title">Realza tu belleza con<br><em>resultados naturales</em></h1>
     <p class="hero-sub">Especialistas en medicina estética avanzada en Almassora</p>
     <div class="hero-actions">
-      <a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20reservar%20cita" target="_blank" class="btn btn-primary">
+      <a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20reservar%20cita" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 015.19 12.9a19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
         Reservar cita
       </a>
@@ -1176,7 +1222,7 @@
         <div class="promo-body">
           <div class="promo-price">150 €</div>
           <div class="promo-name">Pack Higiene + Mesoterapia</div>
-          <a href="https://wa.me/34643083872?text=Hola%2C%20me%20interesa%20la%20promoci%C3%B3n%20Pack%20Higiene%20%2B%20Mesoterapia" target="_blank" class="btn btn-primary promo-cta">Reservar promoción</a>
+          <a href="https://wa.me/34643083872?text=Hola%2C%20me%20interesa%20la%20promoci%C3%B3n%20Pack%20Higiene%20%2B%20Mesoterapia" target="_blank" rel="noopener noreferrer" class="btn btn-primary promo-cta">Reservar promoción</a>
         </div>
       </div>
       <div class="promo-card">
@@ -1187,7 +1233,7 @@
         <div class="promo-body">
           <div class="promo-price">300 €</div>
           <div class="promo-name">Mesoterapia Bono 3 sesiones</div>
-          <a href="https://wa.me/34643083872?text=Hola%2C%20me%20interesa%20la%20promoci%C3%B3n%20Mesoterapia%20Bono%203%20sesiones" target="_blank" class="btn btn-primary promo-cta">Reservar promoción</a>
+          <a href="https://wa.me/34643083872?text=Hola%2C%20me%20interesa%20la%20promoci%C3%B3n%20Mesoterapia%20Bono%203%20sesiones" target="_blank" rel="noopener noreferrer" class="btn btn-primary promo-cta">Reservar promoción</a>
         </div>
       </div>
       <div class="promo-card">
@@ -1198,7 +1244,7 @@
         <div class="promo-body">
           <div class="promo-price">150 €</div>
           <div class="promo-name">Mesoterapia Premium — Mascarilla + LED</div>
-          <a href="https://wa.me/34643083872?text=Hola%2C%20me%20interesa%20la%20promoci%C3%B3n%20Mesoterapia%20Premium" target="_blank" class="btn btn-primary promo-cta">Reservar promoción</a>
+          <a href="https://wa.me/34643083872?text=Hola%2C%20me%20interesa%20la%20promoci%C3%B3n%20Mesoterapia%20Premium" target="_blank" rel="noopener noreferrer" class="btn btn-primary promo-cta">Reservar promoción</a>
         </div>
       </div>
     </div>
@@ -1238,8 +1284,8 @@
             <div class="service-item"><div class="service-dot"></div><div><div class="service-name">Plasma rico en plaquetas (PRP)</div><div class="service-desc">Tratamiento no quirúrgico que tensa la piel y corrige párpados caídos.</div></div></div>
           </div>
           <div class="acc-cta">
-            <a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20m%C3%A1s%20info%20sobre%20medicina%20est%C3%A9tica" target="_blank" class="btn btn-primary">Más información</a>
-            <a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20reservar%20cita" target="_blank" class="btn btn-outline">Reservar cita</a>
+            <a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20m%C3%A1s%20info%20sobre%20medicina%20est%C3%A9tica" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Más información</a>
+            <a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20reservar%20cita" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Reservar cita</a>
           </div>
         </div>
       </div>
@@ -1266,8 +1312,8 @@
             <div class="service-item"><div class="service-dot"></div><div><div class="service-name">Manicura y pedicura</div><div class="service-desc">Cuidado integral con opciones de semipermanente y diseños personalizados.</div></div></div>
           </div>
           <div class="acc-cta">
-            <a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20m%C3%A1s%20info%20sobre%20enfermer%C3%ADa%20est%C3%A9tica" target="_blank" class="btn btn-primary">Más información</a>
-            <a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20reservar%20cita" target="_blank" class="btn btn-outline">Reservar cita</a>
+            <a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20m%C3%A1s%20info%20sobre%20enfermer%C3%ADa%20est%C3%A9tica" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Más información</a>
+            <a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20reservar%20cita" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Reservar cita</a>
           </div>
         </div>
       </div>
@@ -1291,8 +1337,8 @@
             <div class="service-item"><div class="service-dot"></div><div><div class="service-name">Prótesis de areola y pezón</div><div class="service-desc">Acabados únicos y realistas diseñados para devolver la confianza tras la superación del cáncer de mama.</div></div></div>
           </div>
           <div class="acc-cta">
-            <a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20m%C3%A1s%20info%20sobre%20tratamientos%20variados%20con%20Maribel%20Redondo" target="_blank" class="btn btn-primary">Más información</a>
-            <a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20reservar%20cita%20con%20Maribel%20Redondo" target="_blank" class="btn btn-outline">Reservar cita</a>
+            <a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20m%C3%A1s%20info%20sobre%20tratamientos%20variados%20con%20Maribel%20Redondo" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Más información</a>
+            <a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20reservar%20cita%20con%20Maribel%20Redondo" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Reservar cita</a>
           </div>
         </div>
       </div>
@@ -1331,7 +1377,7 @@
                 </tbody>
               </table>
               <div style="margin-top:1.25rem">
-                <a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20solarium" target="_blank" class="btn btn-primary">Reserva tu sesión</a>
+                <a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20solarium" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Reserva tu sesión</a>
               </div>
             </div>
           </div>
@@ -1398,7 +1444,7 @@
         <div class="divider"></div>
         <p class="section-subtitle">Cuatro razones por las que cientos de pacientes nos eligen en Almassora y Castellón.</p>
         <div style="margin-top:2rem">
-          <a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20reservar%20cita" target="_blank" class="btn btn-primary">Reservar cita hoy</a>
+          <a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20reservar%20cita" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Reservar cita hoy</a>
         </div>
       </div>
       <div class="porque-features">
@@ -1434,7 +1480,7 @@
     <h2 class="cta-title">Reserva tu cita hoy</h2>
     <p class="cta-sub">Nuestro equipo te espera para asesorarte de forma personalizada y sin compromiso. Tu mejor versión te espera.</p>
     <div class="cta-actions">
-      <a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20reservar%20cita" target="_blank" class="btn btn-primary">
+      <a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20reservar%20cita" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
         Reservar por WhatsApp
       </a>
@@ -1460,7 +1506,7 @@
             <div>
               <div class="contact-label">Dirección</div>
               <div class="contact-val">Carrer de Santa Quitèria 223<br>12550 Almassora, Castellón</div>
-              <a href="https://www.google.com/maps/place/Centro+M%C3%A9dico+Est%C3%A9tico+Alicia+Forcada/@39.9479152,-0.0731002,841m/data=!3m1!1e3!4m15!1m8!3m7!1s0xd6000d3cc8dd9d9:0x171b4130ac957093!2sCarrer+de+Santa+Quit%C3%A8ria+(l'Alcora),+223,+12550+Almassora,+Castell%C3%B3!3b1!8m2!3d39.9479152!4d-0.0705253!16s%2Fg%2F11cplpnfkk!3m5!1s0xd6001039318d515:0xe512cb04ae871e9a!8m2!3d39.9478876!4d-0.0705535!16s%2Fg%2F11jzpvtwcs" target="_blank" style="font-size:.8rem;color:var(--primary);margin-top:.25rem;display:inline-block">Cómo llegar →</a>
+              <a href="https://www.google.com/maps/place/Centro+M%C3%A9dico+Est%C3%A9tico+Alicia+Forcada/@39.9479152,-0.0731002,841m/data=!3m1!1e3!4m15!1m8!3m7!1s0xd6000d3cc8dd9d9:0x171b4130ac957093!2sCarrer+de+Santa+Quit%C3%A8ria+(l'Alcora),+223,+12550+Almassora,+Castell%C3%B3!3b1!8m2!3d39.9479152!4d-0.0705253!16s%2Fg%2F11cplpnfkk!3m5!1s0xd6001039318d515:0xe512cb04ae871e9a!8m2!3d39.9478876!4d-0.0705535!16s%2Fg%2F11jzpvtwcs" target="_blank" rel="noopener noreferrer" style="font-size:.8rem;color:var(--primary);margin-top:.25rem;display:inline-block">Cómo llegar →</a>
             </div>
           </div>
           <div class="contact-item">
@@ -1507,10 +1553,10 @@
         <div class="footer-tagline">Centro Médico Estético</div>
         <p class="footer-desc">Especialistas en medicina estética avanzada en Almassora, Castellón. Tu belleza natural, potenciada con ciencia y cuidado.</p>
         <div class="footer-social">
-          <a href="https://www.instagram.com/clinica_aliciaforcada" target="_blank" class="social-link" aria-label="Instagram">
+          <a href="https://www.instagram.com/clinica_aliciaforcada" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
             <svg viewBox="0 0 24 24" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
           </a>
-          <a href="https://wa.me/34643083872" target="_blank" class="social-link" aria-label="WhatsApp">
+          <a href="https://wa.me/34643083872" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="WhatsApp">
             <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
           </a>
         </div>
@@ -1534,7 +1580,7 @@
           <span style="font-size:.8rem">Lun–Vie: 10:00 — 20:00</span>
         </div>
         <div style="margin-top:1.5rem">
-          <a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20reservar%20cita" target="_blank" class="btn btn-primary" style="font-size:.8rem;padding:.6rem 1.25rem">Reservar cita</a>
+          <a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20reservar%20cita" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size:.8rem;padding:.6rem 1.25rem">Reservar cita</a>
         </div>
       </div>
     </div>
@@ -1549,7 +1595,7 @@
 </footer>
 
 <!-- ── WHATSAPP FLOAT ────────────────────────────────────── -->
-<a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20reservar%20cita" target="_blank" class="wa-float" aria-label="Reservar por WhatsApp">
+<a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20reservar%20cita" target="_blank" rel="noopener noreferrer" class="wa-float" aria-label="Reservar por WhatsApp">
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
 </a>
 
