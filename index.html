@@ -187,7 +187,7 @@
       position: fixed;
       inset: 0;
       background: #fff;
-      z-index: 99;
+      z-index: 200;
       flex-direction: column;
       align-items: center;
       justify-content: center;
@@ -441,12 +441,40 @@
     .prof-body-inner { overflow: hidden; }
     .prof-body-content { padding: 1rem; }
 
-    .prof-video {
-      width: 100%;
+    .prof-video-wrap {
+      position: relative;
       border-radius: var(--radius);
-      display: block;
+      overflow: hidden;
       background: #000;
       margin-bottom: .85rem;
+    }
+    .prof-video {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+    }
+    .prof-sound-btn {
+      position: absolute;
+      bottom: .55rem;
+      right: .55rem;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(0,0,0,.55);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .prof-sound-btn svg {
+      width: 14px;
+      height: 14px;
+      stroke: #fff;
+      fill: none;
+      stroke-width: 2;
+      pointer-events: none;
     }
     .prof-gallery {
       display: grid;
@@ -1022,9 +1050,14 @@
           <div class="prof-body">
             <div class="prof-body-inner">
               <div class="prof-body-content">
-                <video class="prof-video">
-                  <source src="./videoaliciaforcada.mp4" type="video/mp4">
-                </video>
+                <div class="prof-video-wrap">
+                  <video class="prof-video" muted playsinline>
+                    <source src="./videoaliciaforcadadefinitivo.mp4" type="video/mp4">
+                  </video>
+                  <button class="prof-sound-btn" onclick="toggleProfSound(this)" title="Volumen">
+                    <svg viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -1043,9 +1076,14 @@
           <div class="prof-body">
             <div class="prof-body-inner">
               <div class="prof-body-content">
-                <video class="prof-video">
-                  <source src="./maribel redondo.mp4" type="video/mp4">
-                </video>
+                <div class="prof-video-wrap">
+                  <video class="prof-video" muted playsinline>
+                    <source src="./maribel redondo.mp4" type="video/mp4">
+                  </video>
+                  <button class="prof-sound-btn" onclick="toggleProfSound(this)" title="Volumen">
+                    <svg viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+                  </button>
+                </div>
                 <div class="prof-gallery">
                   <img src="https://centroesteticaaliciaforcada.lovable.app/assets/antes-despues-1-CVVfU4yr.png" alt="Antes/después 1" loading="lazy">
                   <img src="https://centroesteticaaliciaforcada.lovable.app/assets/antes-despues-2-C9fWAft3.png" alt="Antes/después 2" loading="lazy">
@@ -1069,9 +1107,14 @@
           <div class="prof-body">
             <div class="prof-body-inner">
               <div class="prof-body-content">
-                <video class="prof-video">
-                  <source src="./videochialindoc.mp4" type="video/mp4">
-                </video>
+                <div class="prof-video-wrap">
+                  <video class="prof-video" muted playsinline>
+                    <source src="./videochialindoc.mp4" type="video/mp4">
+                  </video>
+                  <button class="prof-sound-btn" onclick="toggleProfSound(this)" title="Volumen">
+                    <svg viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+                  </button>
+                </div>
                 <div class="prof-gallery">
                   <img src="./antesdespues1anasanchis.jpeg" alt="Antes/después labios hombre" loading="lazy">
                   <img src="./antesdespues2anasanchis.jpeg" alt="Antes/después rinomodelación" loading="lazy">
@@ -1095,9 +1138,14 @@
           <div class="prof-body">
             <div class="prof-body-inner">
               <div class="prof-body-content">
-                <video class="prof-video">
-                  <source src="./videoanasanchis.mp4" type="video/mp4">
-                </video>
+                <div class="prof-video-wrap">
+                  <video class="prof-video" muted playsinline>
+                    <source src="./videoanasanchis.mp4" type="video/mp4">
+                  </video>
+                  <button class="prof-sound-btn" onclick="toggleProfSound(this)" title="Volumen">
+                    <svg viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+                  </button>
+                </div>
                 <div class="prof-gallery">
                   <img src="./antesdespues4anasamchis.jpeg" alt="Antes/después Ana Sanchis" loading="lazy">
                 </div>
@@ -1565,12 +1613,22 @@
       c.classList.remove('open');
       const v = c.querySelector('video');
       if (v) { v.pause(); v.muted = true; }
+      const btn = c.querySelector('.prof-sound-btn svg');
+      if (btn) btn.innerHTML = '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/>';
     });
     if (!isOpen) {
       card.classList.add('open');
       const v = card.querySelector('video');
-      if (v) { v.muted = false; v.play(); }
+      if (v) { v.muted = true; v.play(); }
     }
+  }
+
+  function toggleProfSound(btn) {
+    const v = btn.closest('.prof-video-wrap').querySelector('video');
+    v.muted = !v.muted;
+    btn.querySelector('svg').innerHTML = v.muted
+      ? '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/>'
+      : '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 010 14.14"/><path d="M15.54 8.46a5 5 0 010 7.07"/>';
   }
 
   function toggleAcc(btn) {
