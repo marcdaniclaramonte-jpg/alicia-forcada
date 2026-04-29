@@ -1022,7 +1022,7 @@
           <div class="prof-body">
             <div class="prof-body-inner">
               <div class="prof-body-content">
-                <video class="prof-video" controls>
+                <video class="prof-video">
                   <source src="./videoaliciaforcada.mp4" type="video/mp4">
                 </video>
               </div>
@@ -1043,7 +1043,7 @@
           <div class="prof-body">
             <div class="prof-body-inner">
               <div class="prof-body-content">
-                <video class="prof-video" controls>
+                <video class="prof-video">
                   <source src="./maribel redondo.mp4" type="video/mp4">
                 </video>
                 <div class="prof-gallery">
@@ -1069,7 +1069,7 @@
           <div class="prof-body">
             <div class="prof-body-inner">
               <div class="prof-body-content">
-                <video class="prof-video" controls>
+                <video class="prof-video">
                   <source src="./videochialindoc.mp4" type="video/mp4">
                 </video>
                 <div class="prof-gallery">
@@ -1095,7 +1095,7 @@
           <div class="prof-body">
             <div class="prof-body-inner">
               <div class="prof-body-content">
-                <video class="prof-video" controls>
+                <video class="prof-video">
                   <source src="./videoanasanchis.mp4" type="video/mp4">
                 </video>
                 <div class="prof-gallery">
@@ -1564,9 +1564,13 @@
     document.querySelectorAll('.prof-card').forEach(c => {
       c.classList.remove('open');
       const v = c.querySelector('video');
-      if (v) v.pause();
+      if (v) { v.pause(); v.muted = true; }
     });
-    if (!isOpen) card.classList.add('open');
+    if (!isOpen) {
+      card.classList.add('open');
+      const v = card.querySelector('video');
+      if (v) { v.muted = false; v.play(); }
+    }
   }
 
   function toggleAcc(btn) {
