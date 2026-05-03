@@ -561,6 +561,14 @@
     .promo-img { overflow: hidden; background: var(--surface); }
     .promo-img img { width: 100%; height: auto; display: block; transition: transform .4s; }
     .promo-card:hover .promo-img img { transform: scale(1.03); }
+    .promo-banner {
+      height: 130px;
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--champagne) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .promo-banner svg { width: 48px; height: 48px; stroke: rgba(255,255,255,.85); fill: none; stroke-width: 1.4; }
     .promo-body { padding: 1.5rem; }
     .promo-price {
       font-family: 'Playfair Display', serif;
@@ -1049,7 +1057,7 @@
   <div class="container">
     <!-- foto de grupo ancho completo -->
     <div class="nosotros-group-photo">
-      <img src="https://centroesteticaaliciaforcada.lovable.app/assets/team-photo-Bmwd8hgO.png"
+      <img src="./fotogrupo.jpeg"
            alt="Equipo — morena, china y rubia" loading="lazy" />
     </div>
     <div class="nosotros-grid">
@@ -1131,11 +1139,6 @@
                     <svg viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
                   </button>
                 </div>
-                <div class="prof-gallery">
-                  <img src="https://centroesteticaaliciaforcada.lovable.app/assets/antes-despues-1-CVVfU4yr.png" alt="Antes/después 1" loading="lazy">
-                  <img src="https://centroesteticaaliciaforcada.lovable.app/assets/antes-despues-2-C9fWAft3.png" alt="Antes/después 2" loading="lazy">
-                  <img src="https://centroesteticaaliciaforcada.lovable.app/assets/antes-despues-3--_iUKnR9.png" alt="Antes/después 3" loading="lazy">
-                </div>
               </div>
             </div>
           </div>
@@ -1163,9 +1166,9 @@
                   </button>
                 </div>
                 <div class="prof-gallery">
-                  <img src="./antesdespues1anasanchis.jpeg" alt="Antes/después labios hombre" loading="lazy">
-                  <img src="./antesdespues2anasanchis.jpeg" alt="Antes/después rinomodelación" loading="lazy">
-                  <img src="./antesdespues3anasanchis.jpeg" alt="Antes/después labios mujer" loading="lazy">
+                  <img src="./antesdespues1doc.jpeg" alt="Antes/después 1" loading="lazy">
+                  <img src="./antesdespues2doc.jpeg" alt="Antes/después 2" loading="lazy">
+                  <img src="./antesdespues3doc.jpeg" alt="Antes/después 3" loading="lazy">
                 </div>
               </div>
             </div>
@@ -1217,8 +1220,7 @@
     <div class="promos-grid">
       <div class="promo-card">
         <div class="promo-img">
-          <img src="https://centroesteticaaliciaforcada.lovable.app/assets/promo-higiene-mesoterapia-BQ9AtEdS.png"
-               alt="Pack Higiene + Mesoterapia" loading="lazy" />
+          <img src="./bonohigiene.jpeg" alt="Pack Higiene + Mesoterapia" loading="lazy" />
         </div>
         <div class="promo-body">
           <div class="promo-price">150 €</div>
@@ -1228,8 +1230,7 @@
       </div>
       <div class="promo-card">
         <div class="promo-img">
-          <img src="https://centroesteticaaliciaforcada.lovable.app/assets/promo-mesoterapia-bono-D3Gizzwg.png"
-               alt="Mesoterapia Bono 3 sesiones" loading="lazy" />
+          <img src="./bonomesoterapia.jpeg" alt="Mesoterapia Bono 3 sesiones" loading="lazy" />
         </div>
         <div class="promo-body">
           <div class="promo-price">300 €</div>
@@ -1239,8 +1240,7 @@
       </div>
       <div class="promo-card">
         <div class="promo-img">
-          <img src="https://centroesteticaaliciaforcada.lovable.app/assets/promo-mesoterapia-premium-BmUaUeI0.png"
-               alt="Mesoterapia Premium" loading="lazy" />
+          <img src="./bonomascarilla .jpeg" alt="Bono Mascarilla" loading="lazy" />
         </div>
         <div class="promo-body">
           <div class="promo-price">150 €</div>
@@ -1358,9 +1358,8 @@
         <div class="accordion-content">
           <div class="solarium-wrap">
             <div class="solarium-video">
-              <video autoplay muted loop playsinline
-                     poster="https://centroesteticaaliciaforcada.lovable.app/videos/solarium-poster.jpg">
-                <source src="https://centroesteticaaliciaforcada.lovable.app/videos/solarium.mp4" type="video/mp4" />
+              <video autoplay muted loop playsinline>
+                <source src="./videosolarium.mp4" type="video/mp4" />
               </video>
             </div>
             <div class="solarium-info">
