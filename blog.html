@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | Centro Médico Estético Alicia Forcada</title>
+  <meta name="description" content="Blog de medicina estética del Centro Médico Estético Alicia Forcada. Consejos, tratamientos y novedades." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary:      #C4892A;
+      --primary-dark: #A07025;
+      --champagne:    #D4A855;
+      --bg:           #FFFFFF;
+      --fg:           #211D18;
+      --muted:        #EDE9E3;
+      --muted-fg:     #7A7167;
+      --border:       #DDD1B8;
+      --surface:      #F5F1EB;
+      --radius:       2px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--fg); background: var(--bg); }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* ── NAV ─────────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      background: var(--fg);
+      z-index: 100;
+      padding: 1rem 0;
+    }
+    .nav-inner { display: flex; align-items: center; gap: 2rem; }
+    .nav-logo {
+      display: flex;
+      flex-direction: column;
+      gap: .05rem;
+      margin-right: auto;
+    }
+    .nav-logo span:first-child {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: var(--champagne);
+      font-weight: 600;
+      letter-spacing: .04em;
+    }
+    .nav-logo span:last-child { font-size: .65rem; color: rgba(255,255,255,.55); letter-spacing: .12em; text-transform: uppercase; }
+    .nav-links { display: flex; list-style: none; gap: 1.75rem; }
+    .nav-links a { font-size: .8rem; font-weight: 500; color: rgba(255,255,255,.85); transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--champagne); }
+    .btn-outline {
+      font-size: .78rem;
+      font-weight: 500;
+      padding: .5rem 1.1rem;
+      border: 1px solid rgba(255,255,255,.5);
+      border-radius: var(--radius);
+      color: rgba(255,255,255,.9);
+      transition: background .2s;
+      white-space: nowrap;
+    }
+    .btn-outline:hover { background: rgba(255,255,255,.1); }
+    @media (max-width: 768px) {
+      .nav-links, .btn-outline { display: none; }
+    }
+
+    /* ── HERO BLOG ───────────────────────────────── */
+    .blog-hero {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 4rem 0 3rem;
+      text-align: center;
+    }
+    .section-tag {
+      display: inline-block;
+      font-size: .72rem;
+      font-weight: 500;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: .75rem;
+    }
+    .section-tag::before { content: '— '; }
+    .section-tag::after  { content: ' —'; }
+    .blog-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 600;
+      margin-bottom: .75rem;
+    }
+    .blog-hero p {
+      font-size: .95rem;
+      color: var(--muted-fg);
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+    .divider {
+      width: 40px;
+      height: 2px;
+      background: var(--primary);
+      margin: 1rem auto 1.5rem;
+    }
+
+    /* ── PROXIMAMENTE ────────────────────────────── */
+    .coming-soon {
+      text-align: center;
+      padding: 5rem 1.5rem;
+      color: var(--muted-fg);
+    }
+    .coming-soon-icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 1.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .coming-soon-icon svg { width: 28px; height: 28px; stroke: var(--primary); fill: none; stroke-width: 1.5; }
+    .coming-soon h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: var(--fg);
+      margin-bottom: .65rem;
+    }
+    .coming-soon p { font-size: .9rem; line-height: 1.7; }
+
+    /* ── GRID DE ARTÍCULOS ───────────────────────── */
+    .blog-section { padding: 4rem 0 5rem; }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    @media (max-width: 900px) { .blog-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 580px) { .blog-grid { grid-template-columns: 1fr; } }
+
+    /* ── CARD ────────────────────────────────────── */
+    .blog-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow .25s, transform .25s;
+    }
+    .blog-card:hover {
+      box-shadow: 0 10px 36px rgba(196,137,42,.13);
+      transform: translateY(-3px);
+    }
+    .card-img {
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      background: var(--surface);
+      position: relative;
+    }
+    .card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .4s;
+    }
+    .blog-card:hover .card-img img { transform: scale(1.04); }
+    .card-img-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--surface) 0%, var(--muted) 100%);
+    }
+    .card-img-placeholder svg { width: 36px; height: 36px; stroke: var(--border); fill: none; stroke-width: 1.5; }
+    .card-body { padding: 1.35rem; flex: 1; display: flex; flex-direction: column; gap: .5rem; }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      gap: .65rem;
+      font-size: .72rem;
+      color: var(--muted-fg);
+    }
+    .card-tag {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: .15rem .55rem;
+      border-radius: 99px;
+      font-size: .68rem;
+      color: var(--primary);
+      font-weight: 500;
+    }
+    .card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      line-height: 1.4;
+      color: var(--fg);
+    }
+    .card-summary {
+      font-size: .82rem;
+      color: var(--muted-fg);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .card-footer { margin-top: .5rem; }
+    .btn-primary {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      font-size: .78rem;
+      font-weight: 600;
+      padding: .55rem 1.2rem;
+      border-radius: var(--radius);
+      transition: background .2s;
+    }
+    .btn-primary:hover { background: var(--primary-dark); }
+
+    /* ── FOOTER ──────────────────────────────────── */
+    footer {
+      background: var(--fg);
+      color: rgba(255,255,255,.55);
+      text-align: center;
+      padding: 1.75rem;
+      font-size: .78rem;
+    }
+    footer a { color: var(--champagne); }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <a href="./index.html" class="nav-logo">
+      <span>Alicia Forcada</span>
+      <span>Centro Médico Estético</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="./index.html#inicio">Inicio</a></li>
+      <li><a href="./index.html#nosotros">Nosotros</a></li>
+      <li><a href="./index.html#promociones">Promociones</a></li>
+      <li><a href="./index.html#servicios">Servicios</a></li>
+      <li><a href="./index.html#opiniones">Opiniones</a></li>
+      <li><a href="./index.html#contacto">Contacto</a></li>
+      <li><a href="./blog.html" class="active">Blog</a></li>
+    </ul>
+    <a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20reservar%20cita" target="_blank" rel="noopener noreferrer" class="btn-outline">Reservar cita</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<div class="blog-hero">
+  <span class="section-tag">Consejos y novedades</span>
+  <h1>Blog</h1>
+  <div class="divider"></div>
+  <p>Medicina estética, cuidado de la piel y bienestar — de la mano de nuestro equipo.</p>
+</div>
+
+<!-- Contenido: próximamente + grid vacío preparado -->
+<section class="blog-section">
+  <div class="container">
+
+    <!-- Mensaje próximamente (quitar este bloque cuando haya artículos) -->
+    <div class="coming-soon">
+      <div class="coming-soon-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+      </div>
+      <h2>Próximamente</h2>
+      <p>Contenido sobre medicina estética,<br>tratamientos y consejos de nuestro equipo.</p>
+    </div>
+
+    <!-- Grid de artículos — añadir cards aquí cuando haya contenido -->
+    <!-- PLANTILLA DE CARD (copiar y rellenar):
+
+    <div class="blog-grid">
+
+      <div class="blog-card">
+        <div class="card-img">
+          <img src="./blog/imagen-articulo.jpg" alt="Título del artículo" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="card-tag">Mesoterapia</span>
+            <span>12 jun 2025</span>
+          </div>
+          <div class="card-title">Título del artículo aquí</div>
+          <div class="card-summary">Breve descripción del artículo de dos o tres líneas que invite a leer más sobre el tema tratado.</div>
+          <div class="card-footer">
+            <a href="./blog/nombre-del-articulo.html" class="btn-primary">Leer más</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    -->
+
+  </div>
+</section>
+
+<footer>
+  © 2025 Centro Médico Estético Alicia Forcada &nbsp;·&nbsp;
+  <a href="./index.html">Volver a la web</a> &nbsp;·&nbsp;
+  <a href="./politica-de-cookies.html">Política de cookies</a>
+</footer>
+
+</body>
+</html>

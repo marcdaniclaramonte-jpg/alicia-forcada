@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TÍTULO DEL ARTÍCULO | Blog | Centro Médico Estético Alicia Forcada</title>
+  <meta name="description" content="DESCRIPCIÓN BREVE DEL ARTÍCULO (150-160 caracteres)" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary:      #C4892A;
+      --primary-dark: #A07025;
+      --champagne:    #D4A855;
+      --bg:           #FFFFFF;
+      --fg:           #211D18;
+      --muted:        #EDE9E3;
+      --muted-fg:     #7A7167;
+      --border:       #DDD1B8;
+      --surface:      #F5F1EB;
+      --radius:       2px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; color: var(--fg); background: var(--bg); }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* ── NAV ─────────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      background: var(--fg);
+      z-index: 100;
+      padding: 1rem 0;
+    }
+    .nav-inner { display: flex; align-items: center; gap: 2rem; }
+    .nav-logo { display: flex; flex-direction: column; gap: .05rem; margin-right: auto; }
+    .nav-logo span:first-child {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: var(--champagne);
+      font-weight: 600;
+      letter-spacing: .04em;
+    }
+    .nav-logo span:last-child { font-size: .65rem; color: rgba(255,255,255,.55); letter-spacing: .12em; text-transform: uppercase; }
+    .nav-links { display: flex; list-style: none; gap: 1.75rem; }
+    .nav-links a { font-size: .8rem; font-weight: 500; color: rgba(255,255,255,.85); transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--champagne); }
+    .btn-outline {
+      font-size: .78rem;
+      font-weight: 500;
+      padding: .5rem 1.1rem;
+      border: 1px solid rgba(255,255,255,.5);
+      border-radius: var(--radius);
+      color: rgba(255,255,255,.9);
+      transition: background .2s;
+      white-space: nowrap;
+    }
+    .btn-outline:hover { background: rgba(255,255,255,.1); }
+    @media (max-width: 768px) { .nav-links, .btn-outline { display: none; } }
+
+    /* ── ARTÍCULO ────────────────────────────────── */
+    .article-wrap {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem 5rem;
+    }
+    .article-back {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      font-size: .8rem;
+      color: var(--muted-fg);
+      margin-bottom: 2rem;
+      transition: color .2s;
+    }
+    .article-back:hover { color: var(--primary); text-decoration: none; }
+    .article-back svg { width: 14px; height: 14px; stroke: currentColor; fill: none; }
+    .article-tag {
+      display: inline-block;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: .2rem .65rem;
+      border-radius: 99px;
+      font-size: .7rem;
+      color: var(--primary);
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+    .article-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      font-weight: 600;
+      line-height: 1.25;
+      margin-bottom: .75rem;
+    }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: .78rem;
+      color: var(--muted-fg);
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-cover {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      border-radius: var(--radius);
+      display: block;
+      margin-bottom: 2.5rem;
+      background: var(--surface);
+    }
+    .article-body { line-height: 1.8; font-size: .95rem; }
+    .article-body p { margin-bottom: 1.25rem; color: #3a3530; }
+    .article-body h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin: 2.25rem 0 .75rem;
+      color: var(--fg);
+    }
+    .article-body h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 1.75rem 0 .5rem;
+      color: var(--fg);
+    }
+    .article-body ul, .article-body ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+    .article-body li { margin-bottom: .4rem; font-size: .92rem; color: #3a3530; }
+    .article-body strong { color: var(--fg); }
+    .article-body blockquote {
+      border-left: 3px solid var(--primary);
+      padding: .75rem 1.25rem;
+      background: var(--surface);
+      margin: 1.5rem 0;
+      font-style: italic;
+      color: var(--muted-fg);
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+
+    /* ── CTA FINAL ───────────────────────────────── */
+    .article-cta {
+      margin-top: 3rem;
+      padding: 2rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      text-align: center;
+    }
+    .article-cta h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      margin-bottom: .5rem;
+    }
+    .article-cta p { font-size: .85rem; color: var(--muted-fg); margin-bottom: 1.25rem; }
+    .btn-primary {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      font-size: .82rem;
+      font-weight: 600;
+      padding: .65rem 1.5rem;
+      border-radius: var(--radius);
+      transition: background .2s;
+    }
+    .btn-primary:hover { background: var(--primary-dark); text-decoration: none; }
+
+    /* ── FOOTER ──────────────────────────────────── */
+    footer {
+      background: var(--fg);
+      color: rgba(255,255,255,.55);
+      text-align: center;
+      padding: 1.75rem;
+      font-size: .78rem;
+    }
+    footer a { color: var(--champagne); }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <a href="../index.html" class="nav-logo">
+      <span>Alicia Forcada</span>
+      <span>Centro Médico Estético</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html#inicio">Inicio</a></li>
+      <li><a href="../index.html#nosotros">Nosotros</a></li>
+      <li><a href="../index.html#promociones">Promociones</a></li>
+      <li><a href="../index.html#servicios">Servicios</a></li>
+      <li><a href="../index.html#opiniones">Opiniones</a></li>
+      <li><a href="../index.html#contacto">Contacto</a></li>
+      <li><a href="../blog.html" class="active">Blog</a></li>
+    </ul>
+    <a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20reservar%20cita" target="_blank" rel="noopener noreferrer" class="btn-outline">Reservar cita</a>
+  </div>
+</nav>
+
+<div class="article-wrap">
+
+  <a href="../blog.html" class="article-back">
+    <svg viewBox="0 0 24 24" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+    Volver al blog
+  </a>
+
+  <span class="article-tag">CATEGORÍA</span>
+
+  <h1 class="article-title">Título del artículo aquí</h1>
+
+  <div class="article-meta">
+    <span>Por <strong>Alicia Forcada</strong></span>
+    <span>·</span>
+    <span>DD mmm YYYY</span>
+    <span>·</span>
+    <span>X min de lectura</span>
+  </div>
+
+  <!-- Imagen de portada (opcional) -->
+  <!-- <img class="article-cover" src="../blog/imagen-articulo.jpg" alt="Descripción de la imagen"> -->
+
+  <div class="article-body">
+
+    <p>Introducción del artículo. Explicar brevemente de qué va a tratar el artículo y por qué es relevante para las pacientes.</p>
+
+    <h2>Primer subtítulo</h2>
+    <p>Contenido de este apartado...</p>
+
+    <h2>Segundo subtítulo</h2>
+    <p>Contenido de este apartado...</p>
+
+    <blockquote>Cita o dato destacado que quieras resaltar.</blockquote>
+
+    <h2>Conclusión</h2>
+    <p>Conclusión del artículo.</p>
+
+  </div>
+
+  <!-- CTA al final del artículo -->
+  <div class="article-cta">
+    <h3>¿Quieres saber más?</h3>
+    <p>Consulta con nuestro equipo sin compromiso. Te asesoramos de forma personalizada.</p>
+    <a href="https://wa.me/34643083872?text=Hola%2C%20he%20leído%20vuestro%20blog%20y%20quiero%20más%20información" target="_blank" rel="noopener noreferrer" class="btn-primary">Reservar consulta</a>
+  </div>
+
+</div>
+
+<footer>
+  © 2025 Centro Médico Estético Alicia Forcada &nbsp;·&nbsp;
+  <a href="../index.html">Volver a la web</a> &nbsp;·&nbsp;
+  <a href="../blog.html">Blog</a> &nbsp;·&nbsp;
+  <a href="../politica-de-cookies.html">Política de cookies</a>
+</footer>
+
+</body>
+</html>
