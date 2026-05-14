@@ -914,6 +914,49 @@
     .wa-float:hover { transform: scale(1.1); box-shadow: 0 6px 24px rgba(37,211,102,.5); }
     .wa-float svg { width: 26px; height: 26px; fill: #fff; }
 
+    /* ── COOKIE BANNER ─────────────────────────── */
+    #cookieBanner {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 9999;
+      background: var(--fg);
+      color: #fff;
+      padding: 1.1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      box-shadow: 0 -4px 24px rgba(0,0,0,.25);
+    }
+    #cookieBanner.hidden { display: none; }
+    #cookieBanner p { font-size: .82rem; margin: 0; line-height: 1.5; }
+    #cookieBanner a { color: var(--champagne); text-decoration: underline; }
+    .cookie-btns { display: flex; gap: .65rem; flex-shrink: 0; flex-wrap: wrap; }
+    .btn-cookie-all {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: .55rem 1.15rem;
+      border-radius: var(--radius);
+      font-size: .8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background .2s;
+    }
+    .btn-cookie-all:hover { background: var(--primary-dark); }
+    .btn-cookie-necessary {
+      background: transparent;
+      color: #fff;
+      border: 1.5px solid var(--primary);
+      padding: .55rem 1.15rem;
+      border-radius: var(--radius);
+      font-size: .8rem;
+      cursor: pointer;
+      transition: border-color .2s, color .2s;
+    }
+    .btn-cookie-necessary:hover { border-color: var(--champagne); color: var(--champagne); }
+
     /* ── MODAL LEGAL ───────────────────────────── */
     .modal-backdrop {
       position: fixed;
@@ -1589,6 +1632,7 @@
       <div class="footer-legal">
         <a href="#" onclick="openModal('privacidad')">Política de privacidad</a>
         <a href="#" onclick="openModal('legal')">Aviso legal</a>
+        <a href="./politica-de-cookies.html">Política de cookies</a>
       </div>
     </div>
   </div>
@@ -1684,6 +1728,17 @@
     if (!isOpen) item.classList.add('open');
   }
 
+  // ── Cookies ────────────────────────────────────────────
+  (function() {
+    if (localStorage.getItem('cookieConsent')) {
+      document.getElementById('cookieBanner').classList.add('hidden');
+    }
+  })();
+  function acceptCookies(type) {
+    localStorage.setItem('cookieConsent', type);
+    document.getElementById('cookieBanner').classList.add('hidden');
+  }
+
   // ── Modals ─────────────────────────────────────────────
   function openModal(type) {
     const id = type === 'privacidad' ? 'modalPrivacidad' : 'modalLegal';
@@ -1703,6 +1758,15 @@
     }
   }
 </script>
+
+<!-- ── COOKIE BANNER ────────────────────────────────────── -->
+<div id="cookieBanner">
+  <p>Usamos cookies propias y de terceros para mejorar tu experiencia. <a href="./politica-de-cookies.html">Política de cookies</a></p>
+  <div class="cookie-btns">
+    <button class="btn-cookie-all" onclick="acceptCookies('all')">Aceptar todas</button>
+    <button class="btn-cookie-necessary" onclick="acceptCookies('necessary')">Aceptar solo las necesarias</button>
+  </div>
+</div>
 
 </body>
 </html>
