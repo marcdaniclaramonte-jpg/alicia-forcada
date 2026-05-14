@@ -1838,7 +1838,7 @@
       await fetch(NEWSLETTER_URL, {
         method: 'POST',
         mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'text/plain' },
         body: JSON.stringify({ email, date: new Date().toLocaleString('es-ES') })
       });
       document.getElementById('newsletterForm').style.display = 'none';
