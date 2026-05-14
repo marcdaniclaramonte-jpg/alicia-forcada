@@ -671,6 +671,78 @@
     .prices-table tr:last-child td { border-bottom: none; }
     .prices-table tr:nth-child(even) td { background: var(--surface); }
 
+    /* ── NEWSLETTER ────────────────────────────── */
+    #newsletter {
+      padding: 5rem 0;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .newsletter-inner {
+      max-width: 560px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .newsletter-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.35rem, 2.5vw, 1.9rem);
+      font-weight: 600;
+      line-height: 1.3;
+      margin-bottom: .6rem;
+    }
+    .newsletter-sub { font-size: .9rem; color: var(--muted-fg); margin-bottom: 2rem; }
+    .newsletter-form {
+      display: flex;
+      gap: .65rem;
+      max-width: 440px;
+      margin: 0 auto 1rem;
+    }
+    .newsletter-input {
+      flex: 1;
+      padding: .72rem 1rem;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      font-family: 'Inter', sans-serif;
+      font-size: .85rem;
+      color: var(--fg);
+      background: #fff;
+      outline: none;
+      transition: border-color .2s;
+    }
+    .newsletter-input:focus { border-color: var(--primary); }
+    .newsletter-input::placeholder { color: var(--muted-fg); }
+    .newsletter-btn {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: .72rem 1.4rem;
+      border-radius: var(--radius);
+      font-family: 'Inter', sans-serif;
+      font-size: .82rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background .2s;
+    }
+    .newsletter-btn:hover { background: var(--primary-dark); }
+    .newsletter-btn:disabled { opacity: .6; cursor: not-allowed; }
+    .newsletter-confirm {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: .6rem;
+      font-size: .9rem;
+      color: #3a7d44;
+      font-weight: 500;
+      padding: .75rem;
+    }
+    .newsletter-confirm svg { width: 20px; height: 20px; stroke: #3a7d44; fill: none; stroke-width: 2.5; }
+    .newsletter-note { font-size: .72rem; color: var(--muted-fg); }
+    @media (max-width: 480px) {
+      .newsletter-form { flex-direction: column; }
+      .newsletter-btn { width: 100%; }
+    }
+
     /* ── OPINIONES ─────────────────────────────── */
     #opiniones { padding: 4rem 0; }
     .opiniones-header { text-align: center; margin-bottom: 2rem; }
@@ -1433,6 +1505,28 @@
   </div>
 </section>
 
+<!-- ── NEWSLETTER ─────────────────────────────────────── -->
+<section id="newsletter">
+  <div class="container">
+    <div class="newsletter-inner">
+      <span class="section-tag">Novedades exclusivas</span>
+      <h2 class="newsletter-title">Mantente informada de nuestras<br>novedades y promociones</h2>
+      <div class="divider" style="margin:1rem auto 1.25rem;"></div>
+      <p class="newsletter-sub">Sé la primera en conocer nuestras ofertas exclusivas</p>
+      <form class="newsletter-form" id="newsletterForm" onsubmit="submitNewsletter(event)">
+        <input type="email" class="newsletter-input" id="newsletterEmail"
+               placeholder="Tu correo electrónico" required autocomplete="email" />
+        <button type="submit" class="newsletter-btn" id="newsletterBtn">Suscribirme</button>
+      </form>
+      <div class="newsletter-confirm" id="newsletterConfirm">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        ¡Gracias! Te mantendremos informada.
+      </div>
+      <p class="newsletter-note">Sin spam · Puedes darte de baja cuando quieras</p>
+    </div>
+  </div>
+</section>
+
 <!-- ── OPINIONES ───────────────────────────────────────── -->
 <section id="opiniones">
   <div class="container">
@@ -1728,6 +1822,33 @@
     const isOpen = item.classList.contains('open');
     document.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('open'));
     if (!isOpen) item.classList.add('open');
+  }
+
+  // ── Newsletter ─────────────────────────────────────────
+  // Pega aquí la URL de tu Google Apps Script desplegado
+  const NEWSLETTER_URL = 'https://script.google.com/macros/s/AKfycbySeRm2J0N1qwSaA8WgwOt3it_QC6reATnSIHzS0y_5OwtgpGRas6QHdBXv4s130uKX/exec';
+
+  async function submitNewsletter(e) {
+    e.preventDefault();
+    const email = document.getElementById('newsletterEmail').value.trim();
+    const btn   = document.getElementById('newsletterBtn');
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
+    try {
+      await fetch(NEWSLETTER_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, date: new Date().toLocaleString('es-ES') })
+      });
+      document.getElementById('newsletterForm').style.display = 'none';
+      const c = document.getElementById('newsletterConfirm');
+      c.style.display = 'flex';
+    } catch {
+      btn.disabled = false;
+      btn.textContent = 'Suscribirme';
+      alert('Ha ocurrido un error. Por favor inténtalo de nuevo.');
+    }
   }
 
   // ── Cookies ────────────────────────────────────────────
