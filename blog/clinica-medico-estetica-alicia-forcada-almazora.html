@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clínica Médico Estética Alicia Forcada en Almazora | Medicina estética avanzada</title>
+  <meta name="description" content="Descubre la Clínica Médico Estética Alicia Forcada en Almazora. Tratamientos faciales y corporales, equipo médico especializado y atención personalizada con un enfoque profesional, cercano y natural." />
+  <meta property="og:title" content="Clínica Médico Estética Alicia Forcada en Almazora | Medicina estética avanzada" />
+  <meta property="og:description" content="Descubre la Clínica Médico Estética Alicia Forcada en Almazora. Tratamientos faciales y corporales, equipo médico especializado y atención personalizada con un enfoque profesional, cercano y natural." />
+  <meta property="og:image" content="../Alicia forcada estética.png" />
+  <meta property="og:type" content="article" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary:      #C4892A;
+      --primary-dark: #A07025;
+      --champagne:    #D4A855;
+      --bg:           #FFFFFF;
+      --fg:           #211D18;
+      --muted:        #EDE9E3;
+      --muted-fg:     #7A7167;
+      --border:       #DDD1B8;
+      --surface:      #F5F1EB;
+      --radius:       2px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; color: var(--fg); background: var(--bg); }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* ── NAV ─────────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      background: var(--fg);
+      z-index: 100;
+      padding: 1rem 0;
+    }
+    .nav-inner { display: flex; align-items: center; gap: 2rem; }
+    .nav-logo { display: flex; flex-direction: column; gap: .05rem; margin-right: auto; }
+    .nav-logo span:first-child {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: var(--champagne);
+      font-weight: 600;
+      letter-spacing: .04em;
+    }
+    .nav-logo span:last-child { font-size: .65rem; color: rgba(255,255,255,.55); letter-spacing: .12em; text-transform: uppercase; }
+    .nav-links { display: flex; list-style: none; gap: 1.75rem; }
+    .nav-links a { font-size: .8rem; font-weight: 500; color: rgba(255,255,255,.85); transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--champagne); }
+    .btn-outline {
+      font-size: .78rem;
+      font-weight: 500;
+      padding: .5rem 1.1rem;
+      border: 1px solid rgba(255,255,255,.5);
+      border-radius: var(--radius);
+      color: rgba(255,255,255,.9);
+      transition: background .2s;
+      white-space: nowrap;
+    }
+    .btn-outline:hover { background: rgba(255,255,255,.1); text-decoration: none; }
+    @media (max-width: 768px) { .nav-links, .btn-outline { display: none; } }
+
+    /* ── ARTÍCULO ────────────────────────────────── */
+    .article-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem 5rem;
+    }
+    .article-back {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      font-size: .8rem;
+      color: var(--muted-fg);
+      margin-bottom: 2rem;
+      transition: color .2s;
+    }
+    .article-back:hover { color: var(--primary); text-decoration: none; }
+    .article-back svg { width: 14px; height: 14px; stroke: currentColor; fill: none; }
+    .article-tag {
+      display: inline-block;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: .2rem .65rem;
+      border-radius: 99px;
+      font-size: .7rem;
+      color: var(--primary);
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+    .article-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      font-weight: 600;
+      line-height: 1.25;
+      margin-bottom: .75rem;
+    }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: .78rem;
+      color: var(--muted-fg);
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-cover {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      border-radius: var(--radius);
+      display: block;
+      margin-bottom: 2.5rem;
+      background: var(--surface);
+    }
+    .article-body { line-height: 1.85; font-size: .96rem; }
+    .article-body p { margin-bottom: 1.3rem; color: #3a3530; }
+    .article-body h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin: 2.5rem 0 .85rem;
+      color: var(--fg);
+    }
+    .article-body h3 {
+      font-size: 1.02rem;
+      font-weight: 600;
+      margin: 1.75rem 0 .55rem;
+      color: var(--primary-dark);
+    }
+    .article-body ul {
+      padding-left: 1.4rem;
+      margin-bottom: 1.3rem;
+    }
+    .article-body li {
+      margin-bottom: .5rem;
+      font-size: .93rem;
+      color: #3a3530;
+    }
+    .article-body strong { color: var(--fg); }
+    .article-body blockquote {
+      border-left: 3px solid var(--primary);
+      padding: .85rem 1.35rem;
+      background: var(--surface);
+      margin: 1.75rem 0;
+      font-style: italic;
+      color: var(--muted-fg);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      font-size: .93rem;
+    }
+
+    /* ── IMÁGENES DENTRO DEL ARTÍCULO ───────────── */
+    .article-img {
+      width: 100%;
+      border-radius: var(--radius);
+      display: block;
+      margin: 2rem 0;
+      object-fit: cover;
+    }
+    .article-img-caption {
+      text-align: center;
+      font-size: .75rem;
+      color: var(--muted-fg);
+      margin-top: -.75rem;
+      margin-bottom: 2rem;
+    }
+    .article-img-half {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    @media (max-width: 580px) { .article-img-half { grid-template-columns: 1fr; } }
+    .article-img-half img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: var(--radius); }
+
+    /* ── LISTA DESTACADA ─────────────────────────── */
+    .highlight-list {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--primary);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 1.5rem 1.75rem;
+      margin: 1.75rem 0;
+    }
+    .highlight-list ul { padding-left: 1.2rem; margin: 0; }
+    .highlight-list li {
+      margin-bottom: .55rem;
+      font-size: .93rem;
+      color: var(--fg);
+    }
+    .highlight-list li::marker { color: var(--primary); }
+
+    /* ── CTA FINAL ───────────────────────────────── */
+    .article-cta {
+      margin-top: 3.5rem;
+      padding: 2.25rem 2rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      text-align: center;
+    }
+    .article-cta h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      margin-bottom: .55rem;
+      color: var(--fg);
+    }
+    .article-cta p { font-size: .88rem; color: var(--muted-fg); margin-bottom: 1.35rem; }
+    .btn-primary {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      font-size: .82rem;
+      font-weight: 600;
+      padding: .7rem 1.6rem;
+      border-radius: var(--radius);
+      transition: background .2s;
+    }
+    .btn-primary:hover { background: var(--primary-dark); text-decoration: none; }
+
+    /* ── FOOTER ──────────────────────────────────── */
+    footer {
+      background: var(--fg);
+      color: rgba(255,255,255,.55);
+      text-align: center;
+      padding: 1.75rem;
+      font-size: .78rem;
+    }
+    footer a { color: var(--champagne); }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <a href="../index.html" class="nav-logo">
+      <span>Alicia Forcada</span>
+      <span>Centro Médico Estético</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html#inicio">Inicio</a></li>
+      <li><a href="../index.html#nosotros">Nosotros</a></li>
+      <li><a href="../index.html#promociones">Promociones</a></li>
+      <li><a href="../index.html#servicios">Servicios</a></li>
+      <li><a href="../index.html#opiniones">Opiniones</a></li>
+      <li><a href="../index.html#contacto">Contacto</a></li>
+      <li><a href="../blog.html" class="active">Blog</a></li>
+    </ul>
+    <a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20reservar%20cita" target="_blank" rel="noopener noreferrer" class="btn-outline">Reservar cita</a>
+  </div>
+</nav>
+
+<div class="article-wrap">
+
+  <a href="../blog.html" class="article-back">
+    <svg viewBox="0 0 24 24" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+    Volver al blog
+  </a>
+
+  <span class="article-tag">Medicina Estética</span>
+
+  <h1 class="article-title">Clínica médico estética Alicia Forcada en Almazora: belleza, bienestar y confianza en manos de profesionales</h1>
+
+  <div class="article-meta">
+    <span>Por <strong>Alicia Forcada</strong></span>
+    <span>·</span>
+    <span>15 may 2026</span>
+    <span>·</span>
+    <span>8 min de lectura</span>
+  </div>
+
+  <img class="article-cover" src="../Alicia forcada estética.png" alt="Clínica Médico Estética Alicia Forcada en Almazora" />
+
+  <div class="article-body">
+
+    <h2>Un nuevo concepto de medicina estética en Almazora</h2>
+    <p>La medicina estética ha evolucionado enormemente durante los últimos años. Hoy en día, las personas ya no buscan únicamente transformar su imagen, sino sentirse mejor consigo mismas, cuidar su bienestar y potenciar su belleza natural de una forma equilibrada y saludable. En ese contexto nace y crece la Clínica Médico Estética Alicia Forcada, un espacio ubicado en Almazora donde la profesionalidad médica y el trato humano se unen para ofrecer una experiencia completamente personalizada.</p>
+    <p>Hablar de la Clínica Médico Estética Alicia Forcada es hablar de cercanía, confianza y excelencia. Desde sus inicios, la clínica ha apostado por un enfoque diferente dentro del sector de la medicina estética: tratamientos adaptados a cada persona, resultados naturales y una atención basada en escuchar, comprender y acompañar.</p>
+    <p>Cada paciente que entra en la clínica lo hace con unas necesidades concretas, unas expectativas y, muchas veces, también con inseguridades o dudas. Por eso, el equipo médico entiende que el primer paso para obtener buenos resultados es generar confianza y ofrecer una atención cercana desde el primer momento.</p>
+    <p>La clínica se ha convertido en un referente de medicina estética en Almazora gracias a una filosofía clara: cuidar a las personas desde el respeto, la honestidad y la naturalidad.</p>
+
+    <h2>Alicia Forcada: la esencia y el corazón de la clínica</h2>
+
+    <img class="article-img" src="../alicia Forcada estética (2).JPG" alt="Alicia Forcada, directora de la clínica médico estética en Almazora" style="max-height:480px; object-position: top;" />
+    <p class="article-img-caption">Alicia Forcada, directora y especialista del centro.</p>
+
+    <h3>Una directora comprometida con el bienestar de sus pacientes</h3>
+    <p>Detrás de este proyecto se encuentra Alicia Forcada, directora de la clínica y una figura fundamental dentro de su identidad y filosofía de trabajo. Su visión ha permitido crear un espacio donde la medicina estética se vive desde la profesionalidad, pero también desde la empatía y el cuidado humano.</p>
+    <p>Alicia Forcada no solo dirige la clínica; participa activamente en el día a día, supervisa cada detalle y mantiene un contacto cercano con los pacientes. Esa implicación personal es precisamente uno de los aspectos más valorados por quienes confían en el centro.</p>
+    <p>Desde el primer momento, Alicia transmite tranquilidad y cercanía. Su forma de asesorar se basa en la honestidad, evitando tratamientos innecesarios y buscando siempre resultados armónicos y naturales. En una sociedad donde la imagen tiene cada vez más peso, ella defiende una medicina estética responsable, elegante y realista.</p>
+    <p>Su filosofía se aleja de los excesos y apuesta por potenciar la belleza natural de cada persona. Esa visión ha permitido que muchas pacientes encuentren en la clínica un espacio seguro donde sentirse comprendidas y bien atendidas.</p>
+
+    <h3>La importancia de escuchar</h3>
+    <p>Uno de los grandes valores de Alicia Forcada es su capacidad para escuchar. Muchas veces, detrás de una consulta estética existen emociones, inseguridades o situaciones personales que requieren sensibilidad y empatía.</p>
+    <p>Por eso, cada valoración comienza con una conversación cercana donde se analizan las necesidades reales del paciente, sus objetivos y sus expectativas. Esa atención personalizada marca una enorme diferencia en la experiencia de quienes visitan la clínica.</p>
+    <p>La confianza que transmite Alicia Forcada es uno de los motivos principales por los que tantas personas vuelven y recomiendan la clínica a familiares y amigos.</p>
+
+    <h2>Un equipo médico especializado y en constante formación</h2>
+
+    <img class="article-img" src="../Alicia forcada estética almazora.jpeg" alt="Equipo médico de la Clínica Estética Alicia Forcada en Almazora" style="max-height:480px;" />
+    <p class="article-img-caption">El equipo médico y estético de la clínica.</p>
+
+    <h3>Profesionales que comparten una misma filosofía</h3>
+    <p>La excelencia de una clínica médico estética no depende únicamente de sus tratamientos o tecnología. El verdadero valor está en las personas que forman parte del equipo.</p>
+    <p>En Clínica Médico Estética Alicia Forcada trabajan profesionales especializados que comparten una filosofía común: ofrecer tratamientos seguros, personalizados y centrados en el bienestar integral de cada paciente.</p>
+    <p>El equipo médico y estético destaca por su preparación, experiencia y formación continua. La medicina estética avanza constantemente y requiere actualización permanente para poder ofrecer las técnicas más innovadoras y efectivas.</p>
+    <p>Sin embargo, además de la parte técnica, existe algo especialmente importante dentro de la clínica: el trato humano. Cada miembro del equipo entiende que la medicina estética no consiste solo en mejorar la imagen exterior, sino también en ayudar a las personas a sentirse mejor consigo mismas.</p>
+
+    <h3>Atención personalizada en cada tratamiento</h3>
+    <p>Cada piel, cada rostro y cada cuerpo son diferentes. Por eso, la clínica apuesta por protocolos completamente personalizados.</p>
+    <p>Antes de realizar cualquier procedimiento, se lleva a cabo una valoración individualizada donde se estudian las características y necesidades específicas del paciente. Esa personalización permite obtener resultados más naturales, seguros y equilibrados.</p>
+    <p>Además, el equipo dedica tiempo a resolver dudas, explicar tratamientos y acompañar a cada persona durante todo el proceso. Ese nivel de atención genera tranquilidad y refuerza la sensación de confianza que define la identidad de la clínica.</p>
+
+    <h2>Medicina estética avanzada con resultados naturales</h2>
+
+    <h3>El equilibrio entre tecnología y naturalidad</h3>
+    <p>Uno de los pilares de la Clínica Médico Estética Alicia Forcada es la búsqueda de resultados naturales. La clínica entiende que la medicina estética debe potenciar la belleza individual de cada persona, nunca transformarla de manera artificial.</p>
+    <p>Para lograrlo, el centro combina aparatología avanzada, técnicas innovadoras y una visión estética equilibrada y profesional.</p>
+    <p>La prioridad no es cambiar rostros ni cuerpos, sino mejorar la calidad de la piel, rejuvenecer de forma armónica y ayudar a que cada paciente se sienta mejor consigo mismo. Ese enfoque elegante y natural es precisamente uno de los aspectos más valorados por quienes buscan tratamientos médico estéticos en Almazora y Castellón.</p>
+
+    <h3>Tratamientos faciales personalizados</h3>
+    <p>Los tratamientos faciales son algunos de los más demandados dentro de la clínica. Muchas personas buscan mejorar la luminosidad de la piel, suavizar líneas de expresión o combatir signos de fatiga sin perder naturalidad.</p>
+    <p>La clínica trabaja siempre desde un enfoque personalizado, adaptando cada procedimiento a las necesidades específicas de la piel y del rostro de cada paciente. El objetivo es conseguir un aspecto fresco, descansado y saludable, respetando siempre la armonía facial.</p>
+
+    <h3>Tratamientos corporales orientados al bienestar</h3>
+    <p>Además de los procedimientos faciales, la clínica ofrece tratamientos corporales enfocados en el bienestar, la remodelación y el cuidado integral del cuerpo.</p>
+    <p>Cada protocolo se diseña teniendo en cuenta las características físicas y los objetivos de cada persona, garantizando así una experiencia totalmente individualizada.</p>
+
+    <h2>La importancia del bienestar emocional en la medicina estética</h2>
+
+    <h3>Sentirse bien va mucho más allá de la imagen</h3>
+    <p>La medicina estética tiene un componente emocional muy importante. En muchas ocasiones, mejorar determinados aspectos físicos influye directamente en la autoestima, la seguridad personal y el bienestar emocional.</p>
+    <p>En Clínica Médico Estética Alicia Forcada son plenamente conscientes de ello. Por eso, el trato humano y la empatía forman parte esencial de cada consulta y cada tratamiento.</p>
+    <p>Muchas personas llegan buscando una mejora estética concreta y terminan encontrando también un espacio donde sentirse escuchadas, cuidadas y acompañadas.</p>
+
+    <h3>Un espacio donde recuperar confianza</h3>
+    <p>La clínica ha conseguido crear un ambiente tranquilo, elegante y acogedor donde cada paciente puede sentirse cómodo desde el primer momento.</p>
+    <p>No existe la sensación de frialdad o distancia que a veces se asocia con ciertos centros médicos. Aquí, las personas reciben atención cercana y tiempo suficiente para expresar sus inquietudes y resolver dudas. Ese acompañamiento emocional es una parte fundamental de la experiencia.</p>
+
+    <h2>Instalaciones modernas y un entorno pensado para el confort</h2>
+
+    <h3>Un ambiente cuidado hasta el último detalle</h3>
+    <p>La experiencia de un paciente comienza mucho antes del tratamiento. El entorno, la comodidad y la atención recibida influyen enormemente en cómo se siente cada persona.</p>
+    <p>La Clínica Médico Estética Alicia Forcada ha sido diseñada para transmitir calma, bienestar y profesionalidad. Sus instalaciones modernas, luminosas y cuidadas reflejan perfectamente la filosofía del centro.</p>
+    <p>Cada detalle busca generar una experiencia agradable y relajante, permitiendo que los pacientes desconecten del ritmo acelerado del día a día y dediquen tiempo a cuidarse.</p>
+
+    <h3>Tecnología al servicio de la seguridad</h3>
+    <p>La clínica apuesta por equipos y protocolos actualizados que garantizan seguridad y eficacia en todos los procedimientos. La combinación entre innovación tecnológica y experiencia profesional permite ofrecer tratamientos adaptados a las necesidades actuales de los pacientes.</p>
+
+    <h2>La confianza como base de cada tratamiento</h2>
+
+    <h3>Honestidad y transparencia</h3>
+    <p>En un sector donde muchas veces predominan las promesas irreales o los resultados exagerados, Clínica Médico Estética Alicia Forcada apuesta por la honestidad y la transparencia.</p>
+    <p>Cada paciente recibe información clara y realista sobre los tratamientos, sus objetivos y los resultados esperados. La clínica prioriza siempre el bienestar y la seguridad de las personas por encima de cualquier tendencia estética.</p>
+
+    <h3>Una relación cercana con cada paciente</h3>
+    <p>La relación entre la clínica y los pacientes no termina tras realizar un tratamiento. El seguimiento posterior y el acompañamiento continuo forman parte esencial de la atención ofrecida.</p>
+    <p>Ese compromiso genera una relación de confianza duradera y hace que muchos pacientes consideren la clínica como su centro de referencia en medicina estética en Almazora.</p>
+
+    <h2>Clínica médico estética Alicia Forcada: un referente en Almazora y Castellón</h2>
+    <p>Con el paso del tiempo, la clínica se ha consolidado como uno de los centros de medicina estética más valorados de Almazora y Castellón.</p>
+    <p>La combinación de profesionalidad médica, innovación, cercanía y resultados naturales ha permitido construir una sólida reputación basada en la confianza y la satisfacción de los pacientes.</p>
+    <p>Cada vez son más las personas que buscan tratamientos médico estéticos realizados desde la responsabilidad, la naturalidad y el respeto hacia la belleza individual. Y precisamente esa es la esencia de la Clínica Médico Estética Alicia Forcada.</p>
+
+    <h2>Una filosofía basada en la naturalidad y el bienestar</h2>
+    <p>La belleza no debería entenderse como perfección, sino como bienestar, seguridad y equilibrio. Esa idea está presente en toda la filosofía de la clínica.</p>
+    <p>Alicia Forcada y su equipo trabajan cada día para ayudar a las personas a sentirse mejor consigo mismas, ofreciendo tratamientos personalizados, honestos y adaptados a las necesidades reales de cada paciente.</p>
+    <p>La clínica representa una nueva manera de entender la medicina estética: más humana, más cercana y más consciente. Un espacio donde el cuidado personal se vive desde la tranquilidad, la confianza y la profesionalidad.</p>
+    <blockquote>Porque sentirse bien no consiste en cambiar quién eres, sino en potenciar tu mejor versión con naturalidad y equilibrio.</blockquote>
+
+    <h2>¿Por qué elegir la clínica médico estética Alicia Forcada en Almazora?</h2>
+    <div class="highlight-list">
+      <ul>
+        <li>Atención completamente personalizada</li>
+        <li>Equipo médico especializado y en formación continua</li>
+        <li>Tratamientos faciales y corporales adaptados a cada paciente</li>
+        <li>Resultados naturales y armónicos</li>
+        <li>Tecnología avanzada y protocolos seguros</li>
+        <li>Trato cercano y humano</li>
+        <li>Instalaciones modernas y confortables</li>
+        <li>Seguimiento y acompañamiento profesional</li>
+        <li>Referente en medicina estética en Almazora y Castellón</li>
+      </ul>
+    </div>
+
+    <h2>La verdadera belleza comienza siempre por sentirse bien con uno mismo</h2>
+    <p>La Clínica Médico Estética Alicia Forcada se ha convertido en mucho más que un centro de medicina estética en Almazora. Es un espacio donde la profesionalidad médica, la innovación y la cercanía humana conviven para ofrecer una experiencia única y personalizada.</p>
+    <p>Detrás de este proyecto se encuentra Alicia Forcada, una directora comprometida con el bienestar de sus pacientes y con una visión de la estética basada en la naturalidad, el equilibrio y el respeto hacia cada persona.</p>
+    <p>Gracias a un equipo profesional altamente cualificado y a una filosofía centrada en el cuidado integral, la clínica continúa creciendo como un referente en tratamientos médico estéticos en Castellón.</p>
+    <p>Porque la verdadera belleza comienza siempre por sentirse bien con uno mismo.</p>
+
+  </div>
+
+  <div class="article-cta">
+    <h3>¿Te gustaría conocer nuestros tratamientos?</h3>
+    <p>Pide tu valoración personalizada sin compromiso. Te asesoramos y resolvemos todas tus dudas.</p>
+    <a href="https://wa.me/34643083872?text=Hola%2C%20he%20le%C3%ADdo%20vuestro%20blog%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n" target="_blank" rel="noopener noreferrer" class="btn-primary">Reservar consulta</a>
+  </div>
+
+</div>
+
+<footer>
+  © 2025 Centro Médico Estético Alicia Forcada &nbsp;·&nbsp;
+  <a href="../index.html">Volver a la web</a> &nbsp;·&nbsp;
+  <a href="../blog.html">Blog</a> &nbsp;·&nbsp;
+  <a href="../politica-de-cookies.html">Política de cookies</a>
+</footer>
+
+</body>
+</html>

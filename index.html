@@ -1824,10 +1824,7 @@
     if (!isOpen) item.classList.add('open');
   }
 
-  // ── Newsletter ─────────────────────────────────────────
-  // Pega aquí la URL de tu Google Apps Script desplegado
-  const NEWSLETTER_URL = 'https://script.google.com/macros/s/AKfycbySeRm2J0N1qwSaA8WgwOt3it_QC6reATnSIHzS0y_5OwtgpGRas6QHdBXv4s130uKX/exec';
-
+  // ── Newsletter (Mailchimp) ─────────────────────────────
   async function submitNewsletter(e) {
     e.preventDefault();
     const email = document.getElementById('newsletterEmail').value.trim();
@@ -1835,11 +1832,13 @@
     btn.disabled = true;
     btn.textContent = 'Enviando...';
     try {
-      await fetch(NEWSLETTER_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'text/plain' },
-        body: JSON.stringify({ email, date: new Date().toLocaleString('es-ES') })
+      const params = new URLSearchParams();
+      params.set('u', 'fe6597d26b2f78042f6cb414b');
+      params.set('id', 'cd51b68bc3');
+      params.set('EMAIL', email);
+      params.set('b_fe6597d26b2f78042f6cb414b_cd51b68bc3', '');
+      await fetch('https://gmail.us8.list-manage.com/subscribe/post-json?' + params.toString() + '&c=', {
+        mode: 'no-cors'
       });
       document.getElementById('newsletterForm').style.display = 'none';
       const c = document.getElementById('newsletterConfirm');
