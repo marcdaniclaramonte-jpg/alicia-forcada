@@ -196,9 +196,19 @@
     }
     .highlight-list li::marker { color: var(--primary); }
 
+    /* ── ARTÍCULO RELACIONADO ────────────────────── */
+    .article-related { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+    .related-label { font-size: .72rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--primary); margin-bottom: 1rem; }
+    .related-card { display: flex; gap: 1.25rem; align-items: center; padding: 1rem 1.25rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); transition: box-shadow .25s, transform .2s; text-decoration: none; color: var(--fg); }
+    .related-card:hover { box-shadow: 0 6px 24px rgba(196,137,42,.13); transform: translateY(-2px); text-decoration: none; }
+    .related-card img { width: 110px; height: 75px; object-fit: cover; border-radius: var(--radius); flex-shrink: 0; }
+    .related-card-body .related-tag { font-size: .68rem; color: var(--primary); font-weight: 500; display: block; margin-bottom: .35rem; text-transform: uppercase; letter-spacing: .08em; }
+    .related-card-body p { font-size: .88rem; color: var(--fg); line-height: 1.45; margin: 0; font-family: 'Playfair Display', serif; font-weight: 600; }
+    @media (max-width: 480px) { .related-card { flex-direction: column; } .related-card img { width: 100%; height: 160px; } }
+
     /* ── CTA FINAL ───────────────────────────────── */
     .article-cta {
-      margin-top: 3.5rem;
+      margin-top: 2.5rem;
       padding: 2.25rem 2rem;
       background: var(--surface);
       border: 1px solid var(--border);
@@ -396,6 +406,18 @@
     <p>Gracias a un equipo profesional altamente cualificado y a una filosofía centrada en el cuidado integral, la clínica continúa creciendo como un referente en tratamientos médico estéticos en Castellón.</p>
     <p>Porque la verdadera belleza comienza siempre por sentirse bien con uno mismo.</p>
 
+  </div>
+
+  <!-- También te puede interesar -->
+  <div class="article-related">
+    <p class="related-label">También te puede interesar</p>
+    <a href="./equipo-medico-centro-estetico-alicia-forcada.html" class="related-card">
+      <img src="../alicia forcada equipo estetica.png" alt="Equipo Centro Médico Estético Alicia Forcada" />
+      <div class="related-card-body">
+        <span class="related-tag">Equipo</span>
+        <p>Centro Médico Estético Alicia Forcada: un equipo profesional especializado en medicina estética, micropigmentación y cuidado integral de la piel</p>
+      </div>
+    </a>
   </div>
 
   <div class="article-cta">
