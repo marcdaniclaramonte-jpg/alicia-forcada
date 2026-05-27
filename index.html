@@ -693,10 +693,35 @@
     .newsletter-sub { font-size: .9rem; color: var(--muted-fg); margin-bottom: 2rem; }
     .newsletter-form {
       display: flex;
+      flex-direction: column;
       gap: .65rem;
       max-width: 440px;
       margin: 0 auto 1rem;
     }
+    .newsletter-row {
+      display: flex;
+      gap: .65rem;
+    }
+    .newsletter-consent {
+      text-align: left;
+    }
+    .consent-label {
+      display: flex;
+      align-items: flex-start;
+      gap: .5rem;
+      font-size: .75rem;
+      color: var(--muted-fg);
+      cursor: pointer;
+      line-height: 1.55;
+    }
+    .consent-label input[type="checkbox"] {
+      margin-top: .15rem;
+      accent-color: var(--primary);
+      flex-shrink: 0;
+      width: 14px;
+      height: 14px;
+    }
+    .consent-label a { color: var(--primary); }
     .newsletter-input {
       flex: 1;
       padding: .72rem 1rem;
@@ -739,7 +764,7 @@
     .newsletter-confirm svg { width: 20px; height: 20px; stroke: #3a7d44; fill: none; stroke-width: 2.5; }
     .newsletter-note { font-size: .72rem; color: var(--muted-fg); }
     @media (max-width: 480px) {
-      .newsletter-form { flex-direction: column; }
+      .newsletter-row { flex-direction: column; }
       .newsletter-btn { width: 100%; }
     }
 
@@ -1514,9 +1539,17 @@
       <div class="divider" style="margin:1rem auto 1.25rem;"></div>
       <p class="newsletter-sub">Sé la primera en conocer nuestras ofertas exclusivas</p>
       <form class="newsletter-form" id="newsletterForm" onsubmit="submitNewsletter(event)">
-        <input type="email" class="newsletter-input" id="newsletterEmail"
-               placeholder="Tu correo electrónico" required autocomplete="email" />
-        <button type="submit" class="newsletter-btn" id="newsletterBtn">Suscribirme</button>
+        <div class="newsletter-row">
+          <input type="email" class="newsletter-input" id="newsletterEmail"
+                 placeholder="Tu correo electrónico" required autocomplete="email" />
+          <button type="submit" class="newsletter-btn" id="newsletterBtn">Suscribirme</button>
+        </div>
+        <div class="newsletter-consent">
+          <label class="consent-label">
+            <input type="checkbox" required />
+            He leído y acepto la <a href="./politica-de-privacidad.html">Política de privacidad</a>
+          </label>
+        </div>
       </form>
       <div class="newsletter-confirm" id="newsletterConfirm">
         <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
@@ -1726,8 +1759,8 @@
     <div class="footer-bottom">
       <span>© 2025 Centro Médico Estético Alicia Forcada. Todos los derechos reservados.</span>
       <div class="footer-legal">
-        <a href="#" onclick="openModal('privacidad')">Política de privacidad</a>
-        <a href="#" onclick="openModal('legal')">Aviso legal</a>
+        <a href="./politica-de-privacidad.html">Política de privacidad</a>
+        <a href="./aviso-legal.html">Aviso legal</a>
         <a href="./politica-de-cookies.html">Política de cookies</a>
       </div>
     </div>
