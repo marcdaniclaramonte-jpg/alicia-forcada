@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nutricosmética en Almazora | Clínica Alicia Forcada</title>
+  <meta name="description" content="Descubre la nutricosmética en Almazora (Castellón): qué es, beneficios y cómo complementar el cuidado de la piel con Skin Complex y Antiox Complex." />
+  <meta property="og:title" content="Nutricosmética en Almazora | Clínica Alicia Forcada" />
+  <meta property="og:description" content="Descubre la nutricosmética en Almazora (Castellón): qué es, beneficios y cómo complementar el cuidado de la piel con Skin Complex y Antiox Complex." />
+  <meta property="og:image" content="../skin-naqua-alicia forcada.png" />
+  <meta property="og:type" content="article" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary:      #C4892A;
+      --primary-dark: #A07025;
+      --champagne:    #D4A855;
+      --bg:           #FFFFFF;
+      --fg:           #211D18;
+      --muted:        #EDE9E3;
+      --muted-fg:     #7A7167;
+      --border:       #DDD1B8;
+      --surface:      #F5F1EB;
+      --radius:       2px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; color: var(--fg); background: var(--bg); }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* ── NAV ─────────────────────────────────────── */
+    nav { position: sticky; top: 0; background: var(--fg); z-index: 100; padding: 1rem 0; }
+    .nav-inner { display: flex; align-items: center; gap: 2rem; }
+    .nav-logo { display: flex; flex-direction: column; gap: .05rem; margin-right: auto; }
+    .nav-logo span:first-child { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--champagne); font-weight: 600; letter-spacing: .04em; }
+    .nav-logo span:last-child { font-size: .65rem; color: rgba(255,255,255,.55); letter-spacing: .12em; text-transform: uppercase; }
+    .nav-links { display: flex; list-style: none; gap: 1.75rem; }
+    .nav-links a { font-size: .8rem; font-weight: 500; color: rgba(255,255,255,.85); transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--champagne); }
+    .btn-outline { font-size: .78rem; font-weight: 500; padding: .5rem 1.1rem; border: 1px solid rgba(255,255,255,.5); border-radius: var(--radius); color: rgba(255,255,255,.9); transition: background .2s; white-space: nowrap; }
+    .btn-outline:hover { background: rgba(255,255,255,.1); text-decoration: none; }
+    @media (max-width: 768px) { .nav-links, .btn-outline { display: none; } }
+
+    /* ── ARTÍCULO ────────────────────────────────── */
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 3.5rem 1.5rem 5rem; }
+    .article-back { display: inline-flex; align-items: center; gap: .4rem; font-size: .8rem; color: var(--muted-fg); margin-bottom: 2rem; transition: color .2s; }
+    .article-back:hover { color: var(--primary); text-decoration: none; }
+    .article-back svg { width: 14px; height: 14px; stroke: currentColor; fill: none; }
+    .article-tag { display: inline-block; background: var(--surface); border: 1px solid var(--border); padding: .2rem .65rem; border-radius: 99px; font-size: .7rem; color: var(--primary); font-weight: 500; margin-bottom: 1rem; }
+    .article-title { font-family: 'Playfair Display', serif; font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 600; line-height: 1.25; margin-bottom: .75rem; }
+    .article-meta { display: flex; align-items: center; gap: 1rem; font-size: .78rem; color: var(--muted-fg); margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
+    .article-cover { width: 100%; aspect-ratio: 16/9; object-fit: contain; border-radius: var(--radius); display: block; margin-bottom: 2.5rem; background: var(--surface); }
+    .article-body { line-height: 1.85; font-size: .96rem; }
+    .article-body p { margin-bottom: 1.3rem; color: #3a3530; }
+    .article-body h2 { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 600; margin: 2.5rem 0 .85rem; color: var(--fg); }
+    .article-body h3 { font-size: 1.02rem; font-weight: 600; margin: 1.75rem 0 .55rem; color: var(--primary-dark); }
+    .article-body ul { padding-left: 1.4rem; margin-bottom: 1.3rem; }
+    .article-body li { margin-bottom: .45rem; font-size: .93rem; color: #3a3530; }
+    .article-body strong { color: var(--fg); }
+    .article-body blockquote { border-left: 3px solid var(--primary); padding: .85rem 1.35rem; background: var(--surface); margin: 1.75rem 0; font-style: italic; color: var(--muted-fg); border-radius: 0 var(--radius) var(--radius) 0; font-size: .95rem; line-height: 1.7; }
+
+    /* ── IMÁGENES ────────────────────────────────── */
+    .article-img { width: 100%; border-radius: var(--radius); display: block; margin: 2rem 0 .5rem; object-fit: contain; background: var(--surface); }
+    .article-img-caption { text-align: center; font-size: .75rem; color: var(--muted-fg); margin-bottom: 2rem; }
+
+    /* ── VÍDEO ───────────────────────────────────── */
+    .article-video { width: 100%; border-radius: var(--radius); display: block; margin: 2rem 0 .5rem; background: #000; }
+
+    /* ── LISTA DESTACADA ─────────────────────────── */
+    .highlight-list { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--primary); border-radius: 0 var(--radius) var(--radius) 0; padding: 1.25rem 1.5rem; margin: 1rem 0 1.5rem; }
+    .highlight-list ul { padding-left: 1.2rem; margin: 0; }
+    .highlight-list li { margin-bottom: .45rem; font-size: .92rem; color: var(--fg); }
+    .highlight-list li::marker { color: var(--primary); }
+
+    /* ── FAQ ─────────────────────────────────────── */
+    .faq-item { border-bottom: 1px solid var(--border); padding: 1.25rem 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-question { font-size: .97rem; font-weight: 600; color: var(--fg); margin-bottom: .5rem; }
+    .faq-answer { font-size: .92rem; color: #3a3530; line-height: 1.8; margin: 0; }
+
+    /* ── CONTACTO BOX ────────────────────────────── */
+    .contact-box { background: var(--fg); color: rgba(255,255,255,.85); border-radius: var(--radius); padding: 1.75rem 2rem; margin: 2.5rem 0; }
+    .contact-box .cb-name { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: var(--champagne); font-weight: 600; margin-bottom: .6rem; }
+    .contact-box p { color: rgba(255,255,255,.8); font-size: .88rem; margin-bottom: .3rem; }
+    .contact-box a { color: var(--champagne); }
+
+    /* ── ARTÍCULO RELACIONADO ────────────────────── */
+    .article-related { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+    .related-label { font-size: .72rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--primary); margin-bottom: 1rem; }
+    .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 580px) { .related-grid { grid-template-columns: 1fr; } }
+    .related-card { display: flex; gap: 1rem; align-items: center; padding: .9rem 1rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); transition: box-shadow .25s, transform .2s; text-decoration: none; color: var(--fg); }
+    .related-card:hover { box-shadow: 0 6px 24px rgba(196,137,42,.13); transform: translateY(-2px); text-decoration: none; }
+    .related-card img { width: 72px; height: 52px; object-fit: cover; border-radius: var(--radius); flex-shrink: 0; }
+    .related-card-body .related-tag { font-size: .65rem; color: var(--primary); font-weight: 500; display: block; margin-bottom: .25rem; text-transform: uppercase; letter-spacing: .08em; }
+    .related-card-body p { font-size: .82rem; color: var(--fg); line-height: 1.4; margin: 0; font-family: 'Playfair Display', serif; font-weight: 600; }
+
+    /* ── CTA FINAL ───────────────────────────────── */
+    .article-cta { margin-top: 2.5rem; padding: 2.25rem 2rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); text-align: center; }
+    .article-cta h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: .55rem; color: var(--fg); }
+    .article-cta p { font-size: .88rem; color: var(--muted-fg); margin-bottom: 1.35rem; }
+    .btn-primary { display: inline-block; background: var(--primary); color: #fff; font-size: .82rem; font-weight: 600; padding: .7rem 1.6rem; border-radius: var(--radius); transition: background .2s; }
+    .btn-primary:hover { background: var(--primary-dark); text-decoration: none; }
+
+    /* ── FOOTER ──────────────────────────────────── */
+    footer { background: var(--fg); color: rgba(255,255,255,.55); text-align: center; padding: 1.75rem; font-size: .78rem; }
+    footer a { color: var(--champagne); }
+    footer a:hover { text-decoration: underline; }
+  </style>
+
+  <!-- Schema: Article + MedicalWebPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["Article", "MedicalWebPage"],
+    "headline": "Nutricosmética en Almazora (Castellón): qué es, beneficios y cómo mejorar tu piel desde el interior",
+    "description": "Descubre la nutricosmética en Almazora (Castellón): qué es, beneficios y cómo complementar el cuidado de la piel con Skin Complex y Antiox Complex.",
+    "image": "https://aliciaforcada.es/skin-naqua-alicia%20forcada.png",
+    "datePublished": "2026-07-08",
+    "author": {
+      "@type": "Person",
+      "name": "Alicia Forcada"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Centro Médico Estético Alicia Forcada",
+      "url": "https://aliciaforcada.es"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://aliciaforcada.es/blog/nutricosmetica-almazora-castellon.html"
+    },
+    "about": [
+      { "@type": "Thing", "name": "Nutricosmética" },
+      { "@type": "Product", "name": "Skin Complex de Naqua" },
+      { "@type": "Product", "name": "Antiox Complex de Naqua" }
+    ]
+  }
+  </script>
+
+  <!-- Schema: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Qué es la nutricosmética?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La nutricosmética es una disciplina que une nutrición y cosmética mediante el uso de complementos alimenticios formulados con ingredientes específicos para mejorar el aspecto de la piel, el cabello, las uñas y el bienestar general desde el interior. Su objetivo no es sustituir una alimentación equilibrada ni reemplazar tratamientos estéticos, sino actuar como un complemento que ayude a optimizar los procesos naturales del organismo."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿La nutricosmética sustituye una buena alimentación?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. La nutricosmética debe entenderse como un complemento dentro de un estilo de vida saludable. Mantener una alimentación equilibrada, descanso adecuado, hidratación y protección solar sigue siendo fundamental para el cuidado de la piel. Los complementos nutricionales están pensados para integrarse dentro de una rutina completa y personalizada."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <a href="../index.html" class="nav-logo">
+      <span>Alicia Forcada</span>
+      <span>Centro Médico Estético</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html#inicio">Inicio</a></li>
+      <li><a href="../index.html#nosotros">Nosotros</a></li>
+      <li><a href="../index.html#promociones">Promociones</a></li>
+      <li><a href="../index.html#servicios">Servicios</a></li>
+      <li><a href="../index.html#opiniones">Opiniones</a></li>
+      <li><a href="../index.html#contacto">Contacto</a></li>
+      <li><a href="../blog.html" class="active">Blog</a></li>
+    </ul>
+    <a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20reservar%20cita" target="_blank" rel="noopener noreferrer" class="btn-outline">Reservar cita</a>
+  </div>
+</nav>
+
+<div class="article-wrap">
+
+  <a href="../blog.html" class="article-back">
+    <svg viewBox="0 0 24 24" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+    Volver al blog
+  </a>
+
+  <span class="article-tag">Nutricosmética</span>
+
+  <h1 class="article-title">Nutricosmética en Almazora (Castellón): qué es, beneficios y cómo mejorar tu piel desde el interior</h1>
+
+  <div class="article-meta">
+    <span>Por <strong>Alicia Forcada</strong></span>
+    <span>·</span>
+    <span>8 jul 2026</span>
+    <span>·</span>
+    <span>9 min de lectura</span>
+  </div>
+
+  <img class="article-cover"
+       src="../skin-naqua-alicia forcada.png"
+       alt="Skin Complex de Naqua, nutricosmética para el cuidado de la piel en Almazora, Castellón"
+       loading="eager" />
+
+  <div class="article-body">
+
+    <p>La belleza y el cuidado de la piel han evolucionado mucho en los últimos años. Hoy sabemos que una piel sana no depende únicamente de lo que aplicamos externamente, sino también de cómo cuidamos nuestro organismo desde dentro. En este contexto nace la nutricosmética, una tendencia cada vez más demandada que combina nutrición, bienestar y medicina estética para potenciar resultados reales y duraderos.</p>
+
+    <p>En la <a href="./clinica-medico-estetica-alicia-forcada-almazora.html">Clínica Médico Estética Alicia Forcada</a> en Almazora (Castellón) entendemos la belleza como un concepto integral. Por eso trabajamos tratamientos que combinan tecnología, cuidado profesional y apoyo nutricional para acompañar a cada persona de forma personalizada.</p>
+
+    <video class="article-video" controls preload="metadata" playsinline
+           poster="../skin-naqua-alicia forcada.png">
+      <source src="../nutricosmetica-naqua-alicia forcada.mp4" type="video/mp4" />
+      Tu navegador no admite la reproducción de vídeo.
+    </video>
+    <p class="article-img-caption">Nutricosmética en la Clínica Médico Estética Alicia Forcada de Almazora (Castellón).</p>
+
+    <h2>¿Qué es la nutricosmética?</h2>
+
+    <p>La nutricosmética es una disciplina que une nutrición y cosmética mediante el uso de complementos alimenticios formulados con ingredientes específicos para mejorar el aspecto de la piel, el cabello, las uñas y el bienestar general desde el interior.</p>
+
+    <p>Su objetivo no es sustituir una alimentación equilibrada ni reemplazar tratamientos estéticos, sino actuar como un complemento que ayude a optimizar los procesos naturales del organismo.</p>
+
+    <p>A diferencia de una crema, que actúa principalmente sobre las capas superficiales de la piel, la nutricosmética trabaja aportando nutrientes que participan en procesos internos relacionados con:</p>
+
+    <div class="highlight-list">
+      <ul>
+        <li>Protección frente al estrés oxidativo.</li>
+        <li>Producción natural de colágeno.</li>
+        <li>Hidratación celular.</li>
+        <li>Elasticidad y firmeza cutánea.</li>
+        <li>Luminosidad de la piel.</li>
+        <li>Defensa frente a agresiones externas.</li>
+      </ul>
+    </div>
+
+    <p>Actualmente, cada vez más personas buscan soluciones completas que integren estética y salud, especialmente quienes desean cuidar su piel de manera preventiva.</p>
+
+    <h2>¿Para qué sirve la nutricosmética?</h2>
+
+    <p>La nutricosmética puede utilizarse como apoyo dentro de diferentes objetivos estéticos y de bienestar.</p>
+
+    <p>Entre los más habituales encontramos:</p>
+
+    <h3>1. Mejorar el aspecto y calidad de la piel</h3>
+
+    <p>Una piel cuidada desde dentro puede mostrar mayor luminosidad, sensación de hidratación y un aspecto más uniforme.</p>
+
+    <h3>2. Ayudar frente al envejecimiento cutáneo</h3>
+
+    <p>El paso del tiempo, la exposición solar, el estrés y otros factores ambientales generan radicales libres que aceleran el envejecimiento celular.</p>
+
+    <h3>3. Complementar tratamientos médico estéticos</h3>
+
+    <p>Muchas personas combinan la nutricosmética con tratamientos faciales para potenciar la experiencia global de cuidado.</p>
+
+    <h3>4. Favorecer una rutina de belleza integral</h3>
+
+    <p>La filosofía actual de cuidado personal busca trabajar tanto el exterior como el equilibrio interno.</p>
+
+    <h2>Beneficios de la nutricosmética para la piel</h2>
+
+    <p>La popularidad de estos complementos no deja de crecer por la búsqueda de rutinas más completas y sostenibles.</p>
+
+    <p>Entre los beneficios más valorados destacan:</p>
+
+    <h3>Aporte antioxidante</h3>
+
+    <p>Los antioxidantes ayudan a proteger las células frente al daño oxidativo producido por factores externos como contaminación, radiación solar o estrés.</p>
+
+    <h3>Apoyo a la hidratación</h3>
+
+    <p>Determinados activos participan en el mantenimiento de una piel con aspecto más fresco y confortable.</p>
+
+    <h3>Sensación de mayor luminosidad</h3>
+
+    <p>Cuando la piel está equilibrada, suele reflejar un aspecto más uniforme y saludable.</p>
+
+    <h3>Rutina de belleza más completa</h3>
+
+    <p>Combinar cuidado externo e interno permite una visión global del bienestar estético.</p>
+
+    <h2>Skin Complex de Naqua: cuidado de la piel desde el interior</h2>
+
+    <img class="article-img"
+         src="../skin-complex-naqua-alicia forcada.png"
+         alt="Skin Complex de Naqua, complemento de nutricosmética para el cuidado de la piel desde el interior"
+         loading="lazy"
+         style="max-height: 460px;" />
+    <p class="article-img-caption">Skin Complex de Naqua: cuidado diario de la piel desde el interior como parte de una rutina estética global.</p>
+
+    <p>Dentro del universo de la nutricosmética encontramos opciones orientadas específicamente al cuidado cutáneo como Skin Complex de Naqua.</p>
+
+    <p>Este tipo de formulaciones están diseñadas para acompañar el cuidado diario de la piel mediante una combinación de ingredientes seleccionados para integrarse dentro de una rutina estética global.</p>
+
+    <p>Skin Complex suele utilizarse especialmente por personas que buscan:</p>
+
+    <div class="highlight-list">
+      <ul>
+        <li>Mantener una piel con aspecto saludable.</li>
+        <li>Complementar protocolos faciales.</li>
+        <li>Incorporar hábitos de autocuidado más completos.</li>
+        <li>Reforzar la sensación de bienestar y cuidado personal.</li>
+      </ul>
+    </div>
+
+    <p>El concepto detrás de este tipo de productos se basa en entender que la piel refleja muchos procesos internos del organismo.</p>
+
+    <h2>Antiox Complex de Naqua: apoyo antioxidante para el cuidado global</h2>
+
+    <p>Otro ejemplo dentro de la nutricosmética es Antiox Complex de Naqua, una propuesta enfocada en el aporte antioxidante.</p>
+
+    <p>Los antioxidantes tienen un papel relevante dentro del equilibrio celular porque ayudan a combatir el impacto del estrés oxidativo derivado del estilo de vida actual.</p>
+
+    <p>Este tipo de complemento suele despertar interés en personas que desean:</p>
+
+    <div class="highlight-list">
+      <ul>
+        <li>Incorporar antioxidantes a su rutina.</li>
+        <li>Mantener hábitos orientados al bienestar.</li>
+        <li>Complementar tratamientos estéticos.</li>
+        <li>Potenciar una estrategia de cuidado integral.</li>
+      </ul>
+    </div>
+
+    <p>En estética avanzada cada vez se apuesta más por trabajar desde diferentes ángulos para acompañar los objetivos de cada paciente.</p>
+
+    <h3>Nutricosmética y tratamientos estéticos: una combinación cada vez más demandada</h3>
+
+    <p>La tendencia actual ya no busca únicamente resultados superficiales o inmediatos.</p>
+
+    <p>Cada vez más personas en Almazora y Castellón buscan tratamientos que integren:</p>
+
+    <div class="highlight-list">
+      <ul>
+        <li>Evaluación personalizada.</li>
+        <li>Cuidado estético profesional.</li>
+        <li>Hábitos saludables.</li>
+        <li>Cosmética especializada.</li>
+        <li>Nutricosmética adaptada.</li>
+      </ul>
+    </div>
+
+    <p>Por este motivo, combinar tratamientos estéticos con una estrategia de cuidado interno se está convirtiendo en una opción muy valorada.</p>
+
+    <h3>¿La nutricosmética sustituye una buena alimentación?</h3>
+
+    <p>No.</p>
+
+    <p>La nutricosmética debe entenderse como un complemento dentro de un estilo de vida saludable.</p>
+
+    <p>Mantener una alimentación equilibrada, descanso adecuado, hidratación y protección solar sigue siendo fundamental para el cuidado de la piel.</p>
+
+    <p>Los complementos nutricionales están pensados para integrarse dentro de una rutina completa y personalizada.</p>
+
+    <h2>Nutricosmética en Almazora (Castellón): asesoramiento profesional en Clínica Alicia Forcada</h2>
+
+    <p>En la Clínica Médico Estética Alicia Forcada en Almazora, Castellón, apostamos por una visión profesional, personalizada e integral del cuidado estético.</p>
+
+    <p>Cada piel tiene necesidades distintas y por eso creemos en valorar cada caso de forma individual para recomendar las opciones que mejor se adapten a cada objetivo.</p>
+
+    <p>Si quieres descubrir cómo complementar tus <a href="./presoterapia-carboxiterapia-mesoterapia-almazora.html">tratamientos faciales</a> o conocer más sobre el mundo de la nutricosmética en Almazora, estaremos encantados de ayudarte.</p>
+
+    <h3>Descubre una nueva forma de cuidar tu piel: desde fuera… y también desde dentro.</h3>
+
+    <p>Clínica Médico Estética Alicia Forcada – Almazora (Castellón)</p>
+
+    <p>Tratamientos personalizados · Belleza integral · Bienestar y cuidado profesional</p>
+
+    <div class="contact-box">
+      <div class="cb-name">Clínica Médico Estética Alicia Forcada</div>
+      <p>C/ Santa Quiteria, 223 — Almazora (Castellón)</p>
+      <p><a href="tel:+34643083872">643 08 38 72</a></p>
+    </div>
+
+  </div>
+
+  <!-- También te puede interesar -->
+  <div class="article-related">
+    <p class="related-label">También te puede interesar</p>
+    <div class="related-grid">
+      <a href="./presoterapia-carboxiterapia-mesoterapia-almazora.html" class="related-card">
+        <img src="../presoterapia-profesional-alicia forcada (2).webp" alt="Presoterapia, carboxiterapia y mesoterapia en Almazora" loading="lazy" />
+        <div class="related-card-body">
+          <span class="related-tag">Tratamientos Corporales</span>
+          <p>Tratamientos corporales en Almazora: presoterapia, carboxiterapia y mesoterapia</p>
+        </div>
+      </a>
+      <a href="./operacion-bikini-almazora-perdida-peso-escultura-corporal.html" class="related-card">
+        <img src="../alicia forcada estetica operación bikini.jpg" alt="Operación bikini Almazora — remodelación corporal" loading="lazy" />
+        <div class="related-card-body">
+          <span class="related-tag">Medicina Estética Corporal</span>
+          <p>Operación Bikini en Almazora: pérdida de peso saludable y escultura corporal duradera</p>
+        </div>
+      </a>
+      <a href="./clinica-medico-estetica-alicia-forcada-almazora.html" class="related-card">
+        <img src="../Alicia forcada estética.png" alt="Clínica médico estética Alicia Forcada en Almazora" loading="lazy" />
+        <div class="related-card-body">
+          <span class="related-tag">Medicina Estética</span>
+          <p>Clínica médico estética Alicia Forcada en Almazora: belleza, bienestar y confianza</p>
+        </div>
+      </a>
+      <a href="./equipo-medico-centro-estetico-alicia-forcada.html" class="related-card">
+        <img src="../alicia forcada equipo estetica.png" alt="Equipo médico Alicia Forcada" loading="lazy" />
+        <div class="related-card-body">
+          <span class="related-tag">Equipo</span>
+          <p>El equipo profesional del Centro Médico Estético Alicia Forcada en Almazora</p>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="article-cta">
+    <h3>¿Quieres cuidar tu piel desde dentro?</h3>
+    <p>Solicita tu valoración personalizada sin compromiso y descubre cómo la nutricosmética puede complementar tus tratamientos estéticos.</p>
+    <a href="https://wa.me/34643083872?text=Hola%2C%20he%20le%C3%ADdo%20el%20art%C3%ADculo%20sobre%20nutricosm%C3%A9tica%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n" target="_blank" rel="noopener noreferrer" class="btn-primary">Agenda tu valoración</a>
+  </div>
+
+</div>
+
+<footer>
+  © 2025 Centro Médico Estético Alicia Forcada &nbsp;·&nbsp;
+  <a href="../index.html">Volver a la web</a> &nbsp;·&nbsp;
+  <a href="../blog.html">Blog</a> &nbsp;·&nbsp;
+  <a href="../politica-de-cookies.html">Política de cookies</a>
+</footer>
+
+</body>
+</html>
