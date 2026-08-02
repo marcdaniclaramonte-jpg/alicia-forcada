@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Back Cleaning en Almazora (Castellón) | Clínica Alicia Forcada</title>
+  <meta name="description" content="Descubre el Back Cleaning en Alicia Forcada: hidrolimpieza de espalda para limpiar impurezas, exceso de grasa y mejorar el aspecto de la piel con tendencia acneica." />
+  <meta property="og:title" content="Back Cleaning en Almazora (Castellón) | Clínica Alicia Forcada" />
+  <meta property="og:description" content="Back Cleaning: la hidrolimpieza de espalda que ayuda a cuidar la piel con acné e impurezas. Limpieza profunda profesional en la Clínica Médico Estética Alicia Forcada." />
+  <meta property="og:image" content="../back-cleaning-espalda-alicia forcada.jpg" />
+  <meta property="og:type" content="article" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary:      #C4892A;
+      --primary-dark: #A07025;
+      --champagne:    #D4A855;
+      --bg:           #FFFFFF;
+      --fg:           #211D18;
+      --muted:        #EDE9E3;
+      --muted-fg:     #7A7167;
+      --border:       #DDD1B8;
+      --surface:      #F5F1EB;
+      --radius:       2px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; color: var(--fg); background: var(--bg); }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* ── NAV ─────────────────────────────────────── */
+    nav { position: sticky; top: 0; background: var(--fg); z-index: 100; padding: 1rem 0; }
+    .nav-inner { display: flex; align-items: center; gap: 2rem; }
+    .nav-logo { display: flex; flex-direction: column; gap: .05rem; margin-right: auto; }
+    .nav-logo span:first-child { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--champagne); font-weight: 600; letter-spacing: .04em; }
+    .nav-logo span:last-child { font-size: .65rem; color: rgba(255,255,255,.55); letter-spacing: .12em; text-transform: uppercase; }
+    .nav-links { display: flex; list-style: none; gap: 1.75rem; }
+    .nav-links a { font-size: .8rem; font-weight: 500; color: rgba(255,255,255,.85); transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--champagne); }
+    .btn-outline { font-size: .78rem; font-weight: 500; padding: .5rem 1.1rem; border: 1px solid rgba(255,255,255,.5); border-radius: var(--radius); color: rgba(255,255,255,.9); transition: background .2s; white-space: nowrap; }
+    .btn-outline:hover { background: rgba(255,255,255,.1); text-decoration: none; }
+    @media (max-width: 768px) { .nav-links, .btn-outline { display: none; } }
+
+    /* ── ARTÍCULO ────────────────────────────────── */
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 3.5rem 1.5rem 5rem; }
+    .article-back { display: inline-flex; align-items: center; gap: .4rem; font-size: .8rem; color: var(--muted-fg); margin-bottom: 2rem; transition: color .2s; }
+    .article-back:hover { color: var(--primary); text-decoration: none; }
+    .article-back svg { width: 14px; height: 14px; stroke: currentColor; fill: none; }
+    .article-tag { display: inline-block; background: var(--surface); border: 1px solid var(--border); padding: .2rem .65rem; border-radius: 99px; font-size: .7rem; color: var(--primary); font-weight: 500; margin-bottom: 1rem; }
+    .article-title { font-family: 'Playfair Display', serif; font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 600; line-height: 1.25; margin-bottom: .75rem; }
+    .article-meta { display: flex; align-items: center; gap: 1rem; font-size: .78rem; color: var(--muted-fg); margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
+    .article-cover { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: var(--radius); display: block; margin-bottom: 2.5rem; background: var(--surface); }
+    .article-body { line-height: 1.85; font-size: .96rem; }
+    .article-body p { margin-bottom: 1.3rem; color: #3a3530; }
+    .article-body h2 { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 600; margin: 2.5rem 0 .85rem; color: var(--fg); }
+    .article-body h3 { font-size: 1.02rem; font-weight: 600; margin: 1.75rem 0 .55rem; color: var(--primary-dark); }
+    .article-body ul { padding-left: 1.4rem; margin-bottom: 1.3rem; }
+    .article-body li { margin-bottom: .45rem; font-size: .93rem; color: #3a3530; }
+    .article-body strong { color: var(--fg); }
+    .article-body blockquote { border-left: 3px solid var(--primary); padding: .85rem 1.35rem; background: var(--surface); margin: 1.75rem 0; font-style: italic; color: var(--muted-fg); border-radius: 0 var(--radius) var(--radius) 0; font-size: .95rem; line-height: 1.7; }
+
+    /* ── IMÁGENES ────────────────────────────────── */
+    .article-img { width: 100%; border-radius: var(--radius); display: block; margin: 2rem 0 .5rem; object-fit: cover; background: var(--surface); }
+    .article-img-caption { text-align: center; font-size: .75rem; color: var(--muted-fg); margin-bottom: 2rem; }
+
+    /* ── REEL INSTAGRAM ──────────────────────────── */
+    .article-reel { display: flex; justify-content: center; margin: 2.5rem 0 1rem; }
+    .article-reel .instagram-media { margin: 0 auto !important; }
+
+    /* ── LISTA DESTACADA ─────────────────────────── */
+    .highlight-list { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--primary); border-radius: 0 var(--radius) var(--radius) 0; padding: 1.25rem 1.5rem; margin: 1rem 0 1.5rem; }
+    .highlight-list ul { padding-left: 1.2rem; margin: 0; }
+    .highlight-list li { margin-bottom: .45rem; font-size: .92rem; color: var(--fg); }
+    .highlight-list li::marker { color: var(--primary); }
+
+    /* ── FAQ ─────────────────────────────────────── */
+    .faq-item { border-bottom: 1px solid var(--border); padding: 1.25rem 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-question { font-size: .97rem; font-weight: 600; color: var(--fg); margin-bottom: .5rem; }
+    .faq-answer { font-size: .92rem; color: #3a3530; line-height: 1.8; margin: 0; }
+
+    /* ── CONTACTO BOX ────────────────────────────── */
+    .contact-box { background: var(--fg); color: rgba(255,255,255,.85); border-radius: var(--radius); padding: 1.75rem 2rem; margin: 2.5rem 0; }
+    .contact-box .cb-name { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: var(--champagne); font-weight: 600; margin-bottom: .6rem; }
+    .contact-box p { color: rgba(255,255,255,.8); font-size: .88rem; margin-bottom: .3rem; }
+    .contact-box a { color: var(--champagne); }
+
+    /* ── ARTÍCULO RELACIONADO ────────────────────── */
+    .article-related { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+    .related-label { font-size: .72rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--primary); margin-bottom: 1rem; }
+    .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 580px) { .related-grid { grid-template-columns: 1fr; } }
+    .related-card { display: flex; gap: 1rem; align-items: center; padding: .9rem 1rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); transition: box-shadow .25s, transform .2s; text-decoration: none; color: var(--fg); }
+    .related-card:hover { box-shadow: 0 6px 24px rgba(196,137,42,.13); transform: translateY(-2px); text-decoration: none; }
+    .related-card img { width: 72px; height: 52px; object-fit: cover; border-radius: var(--radius); flex-shrink: 0; }
+    .related-card-body .related-tag { font-size: .65rem; color: var(--primary); font-weight: 500; display: block; margin-bottom: .25rem; text-transform: uppercase; letter-spacing: .08em; }
+    .related-card-body p { font-size: .82rem; color: var(--fg); line-height: 1.4; margin: 0; font-family: 'Playfair Display', serif; font-weight: 600; }
+
+    /* ── CTA FINAL ───────────────────────────────── */
+    .article-cta { margin-top: 2.5rem; padding: 2.25rem 2rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); text-align: center; }
+    .article-cta h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: .55rem; color: var(--fg); }
+    .article-cta p { font-size: .88rem; color: var(--muted-fg); margin-bottom: 1.35rem; }
+    .btn-primary { display: inline-block; background: var(--primary); color: #fff; font-size: .82rem; font-weight: 600; padding: .7rem 1.6rem; border-radius: var(--radius); transition: background .2s; }
+    .btn-primary:hover { background: var(--primary-dark); text-decoration: none; }
+
+    /* ── FOOTER ──────────────────────────────────── */
+    footer { background: var(--fg); color: rgba(255,255,255,.55); text-align: center; padding: 1.75rem; font-size: .78rem; }
+    footer a { color: var(--champagne); }
+    footer a:hover { text-decoration: underline; }
+  </style>
+
+  <!-- Schema: MedicalProcedure + Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["MedicalProcedure", "Article"],
+    "name": "Back Cleaning (hidrolimpieza de espalda)",
+    "headline": "Back Cleaning: la hidrolimpieza de espalda que ayuda a cuidar la piel con acné e impurezas",
+    "description": "Descubre el Back Cleaning en Alicia Forcada: hidrolimpieza de espalda para limpiar impurezas, exceso de grasa y mejorar el aspecto de la piel con tendencia acneica.",
+    "image": "https://aliciaforcada.es/back-cleaning-espalda-alicia%20forcada.jpg",
+    "datePublished": "2026-08-02",
+    "author": {
+      "@type": "Person",
+      "name": "Alicia Forcada"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Centro Médico Estético Alicia Forcada",
+      "url": "https://aliciaforcada.es"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://aliciaforcada.es/blog/back-cleaning-espalda-almazora-castellon.html"
+    }
+  }
+  </script>
+
+  <!-- Schema: LocalBusiness / MedicalClinic -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalClinic",
+    "name": "Clínica Médico Estética Alicia Forcada",
+    "url": "https://aliciaforcada.es",
+    "telephone": "+34643083872",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "C/ Santa Quiteria, 223",
+      "addressLocality": "Almazora",
+      "addressRegion": "Castellón",
+      "addressCountry": "ES"
+    }
+  }
+  </script>
+
+  <!-- Schema: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿La limpieza de espalda elimina el acné?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El Back Cleaning puede ayudar a mejorar el aspecto de una piel con impurezas, grasa y tendencia a la obstrucción, pero no debe presentarse como una cura del acné. El acné es una alteración cutánea que puede presentar diferentes grados y características. Cuando existen lesiones inflamatorias, nódulos, quistes, cicatrices o un problema persistente, es recomendable consultar con un dermatólogo."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Para quién está indicado el Back Cleaning?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Puede resultar especialmente interesante para personas con exceso de grasa en la espalda, poros obstruidos, puntos negros, impurezas, textura irregular, granitos ocasionales, tendencia acneica, acumulación de sudor después del deporte, piel áspera o apagada, o dificultad para realizar una limpieza adecuada en casa."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Por qué aparecen granitos en la espalda?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El denominado bacne puede aparecer por la producción excesiva de sebo, la acumulación de células muertas, la obstrucción de los folículos, la sudoración y la fricción. También influyen hábitos como permanecer con ropa húmeda tras el deporte o los residuos de productos capilares que contactan con la piel durante la ducha."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuándo es un buen momento para realizar un Back Cleaning?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Puede ser especialmente interesante durante épocas de mayor calor, cuando aumenta la sudoración, pero también durante todo el año para quienes tienen tendencia a acumular grasa e impurezas en esta zona. Una valoración profesional permitirá decidir cuándo es más conveniente realizar el tratamiento y con qué frecuencia."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <a href="../index.html" class="nav-logo">
+      <span>Alicia Forcada</span>
+      <span>Centro Médico Estético</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html#inicio">Inicio</a></li>
+      <li><a href="../index.html#nosotros">Nosotros</a></li>
+      <li><a href="../index.html#promociones">Promociones</a></li>
+      <li><a href="../index.html#servicios">Servicios</a></li>
+      <li><a href="../index.html#opiniones">Opiniones</a></li>
+      <li><a href="../index.html#contacto">Contacto</a></li>
+      <li><a href="../blog.html" class="active">Blog</a></li>
+    </ul>
+    <a href="https://wa.me/34643083872?text=Hola%2C%20quiero%20reservar%20cita" target="_blank" rel="noopener noreferrer" class="btn-outline">Reservar cita</a>
+  </div>
+</nav>
+
+<div class="article-wrap">
+
+  <a href="../blog.html" class="article-back">
+    <svg viewBox="0 0 24 24" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+    Volver al blog
+  </a>
+
+  <span class="article-tag">Tratamientos Corporales</span>
+
+  <h1 class="article-title">Back Cleaning: la hidrolimpieza de espalda que ayuda a cuidar la piel con acné e impurezas</h1>
+
+  <div class="article-meta">
+    <span>Por <strong>Alicia Forcada</strong></span>
+    <span>·</span>
+    <span>2 ago 2026</span>
+    <span>·</span>
+    <span>11 min de lectura</span>
+  </div>
+
+  <img class="article-cover"
+       src="../back-cleaning-espalda-alicia forcada.jpg"
+       alt="Tratamiento de Back Cleaning e hidrolimpieza de espalda en clínica de Almazora, Castellón"
+       loading="eager" />
+
+  <div class="article-body">
+
+    <p>La espalda es una de las zonas del cuerpo donde más fácilmente pueden acumularse grasa, sudor, células muertas e impurezas. Y aunque muchas veces nos preocupamos por limpiar y cuidar el rostro, la piel de la espalda puede quedar olvidada.</p>
+
+    <p>El resultado puede ser una espalda con poros obstruidos, puntos negros, granitos, textura irregular o exceso de grasa, especialmente en personas con tendencia acneica.</p>
+
+    <p>Aquí es donde entra en juego el Back Cleaning, un tratamiento de limpieza profunda e hidro limpieza de espalda diseñado para favorecer una piel más limpia, suave y uniforme.</p>
+
+    <p>En Alicia Forcada, este tratamiento se plantea como una opción para quienes desean mejorar el aspecto de la piel de la espalda y realizar una higiene profunda de una zona que, por su propia localización, puede resultar complicada de cuidar correctamente en casa.</p>
+
+    <div class="article-reel">
+      <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DbXdghyNgtZ/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:1px auto; max-width:540px; min-width:326px; padding:0; width:99.375%; width:calc(100% - 2px);">
+        <div style="padding:16px;">
+          <a href="https://www.instagram.com/reel/DbXdghyNgtZ/?utm_source=ig_embed&amp;utm_campaign=loading" style="background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank" rel="noopener noreferrer">Ver esta publicación en Instagram</a>
+          <p style="color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/reel/DbXdghyNgtZ/?utm_source=ig_embed&amp;utm_campaign=loading" style="color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank" rel="noopener noreferrer">Una publicación compartida de Alicia Forcada (@clinica_aliciaforcada)</a></p>
+        </div>
+      </blockquote>
+    </div>
+    <p class="article-img-caption">El Back Cleaning, tal y como lo vimos en nuestro reel de Instagram (@clinica_aliciaforcada).</p>
+
+    <h2>¿Qué es el Back Cleaning?</h2>
+
+    <p>El Back Cleaning es un tratamiento profesional de limpieza de la espalda que busca eliminar acumulaciones de impurezas y favorecer una mejor condición superficial de la piel.</p>
+
+    <p>La espalda cuenta con una elevada concentración de glándulas sebáceas y, además, está constantemente expuesta a factores como sudor, fricción, ropa ajustada, actividad física o productos cosméticos capilares.</p>
+
+    <p>Todo ello puede contribuir a que aparezcan imperfecciones.</p>
+
+    <p>Una higiene profesional de la espalda permite trabajar sobre diferentes aspectos de la piel, ayudando a eliminar residuos y células superficiales acumuladas y proporcionando una sensación inmediata de limpieza y suavidad.</p>
+
+    <p>Cuando existe tendencia a desarrollar granitos o comedones, este tipo de tratamiento puede convertirse además en un complemento dentro de una rutina de cuidado personalizada.</p>
+
+    <h3>¿Para quién está indicado?</h3>
+
+    <p>El Back Cleaning puede resultar especialmente interesante para personas que presentan:</p>
+
+    <div class="highlight-list">
+      <ul>
+        <li>Exceso de grasa en la espalda.</li>
+        <li>Poros obstruidos.</li>
+        <li>Puntos negros.</li>
+        <li>Impurezas.</li>
+        <li>Textura irregular.</li>
+        <li>Granitos ocasionales.</li>
+        <li>Tendencia acneica.</li>
+        <li>Acumulación de sudor después del deporte.</li>
+        <li>Piel áspera o apagada en la espalda.</li>
+        <li>Dificultad para realizar una limpieza adecuada en casa.</li>
+      </ul>
+    </div>
+
+    <p>Es importante entender que una espalda con acné no necesita simplemente "más limpieza". Cuando existen lesiones inflamatorias importantes o un acné persistente, es necesario realizar una valoración profesional para determinar qué cuidados son apropiados.</p>
+
+    <p>El Back Cleaning puede formar parte del cuidado estético de la piel, pero no sustituye el diagnóstico ni el tratamiento médico cuando existe una patología dermatológica.</p>
+
+    <h2>Hidro limpieza de espalda: mucho más que una limpieza superficial</h2>
+
+    <img class="article-img"
+         src="../back-cleaning-antes-despues-alicia forcada.jpg"
+         alt="Antes y después de una limpieza de espalda con acné en Clínica Alicia Forcada, Almazora"
+         loading="lazy"
+         style="max-height: 460px;" />
+    <p class="article-img-caption">Antes y después: la hidrolimpieza de espalda ayuda a mejorar el aspecto de una piel con impurezas y tendencia acneica.</p>
+
+    <p>Una de las características más interesantes del tratamiento es el concepto de hidro limpieza.</p>
+
+    <p>A diferencia de una limpieza convencional realizada únicamente con productos cosméticos, los tratamientos de hidrolimpieza utilizan técnicas profesionales destinadas a trabajar sobre la superficie cutánea y favorecer la eliminación de impurezas.</p>
+
+    <p>En una espalda con tendencia a acumular grasa, esta limpieza puede ayudar a conseguir una piel con una sensación más fresca, limpia y uniforme.</p>
+
+    <p>Además, preparar adecuadamente la piel permite trabajar posteriormente con productos cosméticos adaptados a las necesidades de cada persona.</p>
+
+    <p>Por eso, el objetivo no debería ser simplemente conseguir una espalda "sin granitos" de forma puntual, sino establecer una estrategia de cuidado que ayude a mantenerla en mejores condiciones.</p>
+
+    <h3>¿Por qué aparecen granitos en la espalda?</h3>
+
+    <p>El denominado "bacne", término utilizado para referirse al acné localizado en la espalda, puede aparecer por diferentes factores.</p>
+
+    <p>Entre ellos encontramos la producción excesiva de sebo, la acumulación de células muertas, la obstrucción de los folículos, la sudoración y la fricción.</p>
+
+    <p>También pueden influir determinados hábitos.</p>
+
+    <p>Por ejemplo, después de hacer deporte es habitual permanecer durante un tiempo con ropa húmeda por el sudor. La combinación de calor, humedad y fricción puede favorecer la aparición de imperfecciones en personas predispuestas.</p>
+
+    <p>Otro factor que muchas veces pasa desapercibido son los productos utilizados para el cabello.</p>
+
+    <p>Champús, mascarillas, acondicionadores o productos de styling pueden entrar en contacto con la espalda durante la ducha y dejar residuos sobre la piel.</p>
+
+    <p>Por eso, cuando hablamos de tratamiento para los granitos de la espalda, no debemos centrarnos exclusivamente en una sesión estética. También es importante revisar los hábitos diarios.</p>
+
+    <h2>Back Cleaning para espalda con acné: ¿qué beneficios puede aportar?</h2>
+
+    <p>Una limpieza profesional de espalda puede aportar diferentes beneficios estéticos.</p>
+
+    <h3>1. Limpieza profunda</h3>
+
+    <p>Permite trabajar sobre impurezas y residuos acumulados que pueden resultar difíciles de eliminar correctamente durante la ducha diaria.</p>
+
+    <h3>2. Piel más suave</h3>
+
+    <p>La eliminación de células superficiales acumuladas ayuda a mejorar la sensación de suavidad y la textura de la piel.</p>
+
+    <h3>3. Aspecto más uniforme</h3>
+
+    <p>Una piel correctamente higienizada puede presentar un aspecto más limpio y homogéneo.</p>
+
+    <h3>4. Sensación de frescor</h3>
+
+    <p>Especialmente interesante después de periodos de calor o cuando existe una elevada sudoración.</p>
+
+    <h3>5. Preparación de la piel</h3>
+
+    <p>Una piel limpia permite incorporar posteriormente productos cosméticos adecuados a las necesidades individuales.</p>
+
+    <h3>6. Cuidado de una zona olvidada</h3>
+
+    <p>Porque la espalda también necesita cuidados y, sin embargo, suele recibir mucha menos atención que el rostro.</p>
+
+    <h2>¿Cómo se realiza una hidrolimpieza de espalda?</h2>
+
+    <p>El protocolo puede adaptarse a las características de cada piel y a las necesidades de cada persona.</p>
+
+    <p>Generalmente, un tratamiento profesional de este tipo comienza con una valoración del estado de la piel.</p>
+
+    <p>No todas las espaldas son iguales.</p>
+
+    <p>No es lo mismo trabajar sobre una piel grasa con puntos negros que sobre una piel sensible, deshidratada o con lesiones inflamatorias.</p>
+
+    <p>Después de valorar la piel, se procede a realizar una higiene adecuada para eliminar restos de sudor, cosméticos y suciedad superficial.</p>
+
+    <p>Posteriormente pueden incorporarse diferentes fases de preparación y limpieza, como la exfoliación o técnicas específicas de hidro limpieza, siempre dependiendo del protocolo utilizado y de las características cutáneas.</p>
+
+    <p>El objetivo es conseguir una espalda limpia y preparada sin agredir innecesariamente la barrera cutánea.</p>
+
+    <p>Y esto es especialmente importante cuando hablamos de piel con tendencia acneica.</p>
+
+    <p>Más intensidad no significa necesariamente mejores resultados.</p>
+
+    <h2>¿La limpieza de espalda elimina el acné?</h2>
+
+    <p>Esta es una de las preguntas más habituales.</p>
+
+    <p>La respuesta requiere matices.</p>
+
+    <p>El Back Cleaning puede ayudar a mejorar el aspecto de una piel con impurezas, grasa y tendencia a la obstrucción, pero no debe presentarse como una cura del acné.</p>
+
+    <p>El acné es una alteración cutánea que puede presentar diferentes grados y características. Cuando existen lesiones inflamatorias, nódulos, quistes, cicatrices o un problema persistente, es recomendable consultar con un dermatólogo.</p>
+
+    <p>En estos casos, el tratamiento estético puede complementar determinados cuidados, pero debe existir una valoración adecuada.</p>
+
+    <p>Por eso, en Alicia Forcada apostamos por adaptar cada tratamiento a la situación concreta de la piel.</p>
+
+    <h2>¿Por qué la espalda necesita una limpieza diferente al rostro?</h2>
+
+    <p>Aunque tanto la cara como la espalda pueden presentar grasa, puntos negros o granitos, existen diferencias importantes.</p>
+
+    <p>La espalda es una zona más extensa, de difícil acceso y sometida constantemente a fricción.</p>
+
+    <p>Además, durante los meses de calor puede acumular bastante sudor.</p>
+
+    <p>La ropa también desempeña un papel importante. Tejidos poco transpirables, prendas deportivas ajustadas o permanecer durante horas con ropa húmeda pueden incrementar la sensación de congestión de la piel.</p>
+
+    <p>Por eso, una rutina de cuidado facial no puede trasladarse directamente a la espalda.</p>
+
+    <p>Necesitamos productos y protocolos adaptados a las características de esa zona.</p>
+
+    <h2>Back Cleaning en Almazora, Castellón: cuidar tu espalda también es cuidar tu piel</h2>
+
+    <p>Si buscas un tratamiento de limpieza profunda de espalda en Valencia, el Back Cleaning puede ser una alternativa interesante para mejorar la higiene y el aspecto de una piel con impurezas, grasa o tendencia acneica.</p>
+
+    <p>En Alicia Forcada entendemos que cada piel necesita un protocolo diferente.</p>
+
+    <p>Por eso, antes de realizar un tratamiento, es importante observar las características de la piel y determinar qué procedimiento resulta más adecuado.</p>
+
+    <p>El objetivo no es realizar una limpieza agresiva, sino cuidar la piel, mejorar su aspecto y proporcionar una experiencia profesional adaptada a cada persona.</p>
+
+    <p>Y es que una espalda bonita no significa necesariamente una espalda perfecta.</p>
+
+    <p>Significa una piel cuidada, limpia y atendida.</p>
+
+    <h2>¿Cuándo es un buen momento para realizar un Back Cleaning?</h2>
+
+    <p>No existe una única respuesta.</p>
+
+    <p>Puede ser especialmente interesante durante épocas de mayor calor, cuando aumenta la sudoración, pero también durante todo el año para quienes tienen tendencia a acumular grasa e impurezas en esta zona.</p>
+
+    <p>Después del verano, además, muchas personas notan la piel de la espalda más seca, áspera o irregular debido a la exposición solar, el sudor y otros factores ambientales.</p>
+
+    <p>Una valoración profesional permitirá decidir cuándo es más conveniente realizar el tratamiento y con qué frecuencia.</p>
+
+    <h2>Dale a tu espalda el cuidado que normalmente le das a tu rostro</h2>
+
+    <p>Nos preocupamos por limpiar, hidratar y cuidar nuestro rostro cada día.</p>
+
+    <p>Sin embargo, muchas veces olvidamos completamente nuestra espalda hasta que aparecen los primeros granitos.</p>
+
+    <p>El Back Cleaning propone precisamente lo contrario: incorporar la espalda a nuestra rutina de cuidado de la piel.</p>
+
+    <p>Una hidrolimpieza de espalda profesional puede ayudar a eliminar impurezas, mejorar la textura y proporcionar una sensación de limpieza profunda, especialmente cuando la piel presenta tendencia grasa o acneica.</p>
+
+    <p>Si además existen granitos persistentes, inflamación o lesiones que no mejoran, lo más adecuado será realizar una valoración profesional y, si es necesario, consultar con dermatología.</p>
+
+    <p>Porque cuidar la piel también significa saber cuándo necesita un tratamiento estético y cuándo necesita atención médica.</p>
+
+    <h3>¿Quieres descubrir si el Back Cleaning es adecuado para tu piel?</h3>
+
+    <p>Tu espalda también merece atención.</p>
+
+    <p>Si notas granitos, puntos negros, exceso de grasa, poros obstruidos o una textura irregular, pide una valoración en Alicia Forcada y descubre qué protocolo puede adaptarse mejor a las necesidades de tu piel.</p>
+
+    <p>No esperes a esconder tu espalda. Empieza a cuidarla.</p>
+
+    <p>📲 Reserva tu cita y pregunta por el tratamiento Back Cleaning.</p>
+
+    <p>¿Buscas una hidrolimpieza de espalda en Castellón o Almazora para mejorar el aspecto de una piel con acné, grasa o impurezas? En Alicia Forcada podemos valorar las necesidades de tu piel y recomendarte el tratamiento más adecuado. Contacta con nosotros y reserva tu cita.</p>
+
+    <div class="contact-box">
+      <div class="cb-name">Clínica Médico Estética Alicia Forcada</div>
+      <p>C/ Santa Quiteria, 223 — Almazora (Castellón)</p>
+      <p><a href="tel:+34643083872">643 08 38 72</a></p>
+    </div>
+
+  </div>
+
+  <!-- También te puede interesar -->
+  <div class="article-related">
+    <p class="related-label">También te puede interesar</p>
+    <div class="related-grid">
+      <a href="./dermapen-exosomas-castellon.html" class="related-card">
+        <img src="../alicia forcada estetica dermapen.png" alt="Dermapen con exosomas en Castellón" loading="lazy" />
+        <div class="related-card-body">
+          <span class="related-tag">Medicina Estética Regenerativa</span>
+          <p>Dermapen con Exosomas en Castellón: medicina estética regenerativa para una piel más joven</p>
+        </div>
+      </a>
+      <a href="./nutricosmetica-almazora-castellon.html" class="related-card">
+        <img src="../skin-naqua-alicia forcada.png" alt="Nutricosmética en Almazora — Skin Complex de Naqua" loading="lazy" />
+        <div class="related-card-body">
+          <span class="related-tag">Nutricosmética</span>
+          <p>Nutricosmética en Almazora: qué es, beneficios y cómo mejorar tu piel desde el interior</p>
+        </div>
+      </a>
+      <a href="./presoterapia-carboxiterapia-mesoterapia-almazora.html" class="related-card">
+        <img src="../presoterapia-profesional-alicia forcada (2).webp" alt="Presoterapia, carboxiterapia y mesoterapia en Almazora" loading="lazy" />
+        <div class="related-card-body">
+          <span class="related-tag">Tratamientos Corporales</span>
+          <p>Tratamientos corporales en Almazora: presoterapia, carboxiterapia y mesoterapia</p>
+        </div>
+      </a>
+      <a href="./clinica-medico-estetica-alicia-forcada-almazora.html" class="related-card">
+        <img src="../Alicia forcada estética.png" alt="Clínica médico estética Alicia Forcada en Almazora" loading="lazy" />
+        <div class="related-card-body">
+          <span class="related-tag">Medicina Estética</span>
+          <p>Clínica médico estética Alicia Forcada en Almazora: belleza, bienestar y confianza</p>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="article-cta">
+    <h3>Dale a tu espalda el cuidado que merece</h3>
+    <p>Pide tu valoración sin compromiso y descubre si el Back Cleaning es el tratamiento adecuado para tu piel.</p>
+    <a href="https://wa.me/34643083872?text=Hola%2C%20he%20le%C3%ADdo%20el%20art%C3%ADculo%20sobre%20Back%20Cleaning%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n" target="_blank" rel="noopener noreferrer" class="btn-primary">Reserva tu cita</a>
+  </div>
+
+</div>
+
+<footer>
+  © 2025 Centro Médico Estético Alicia Forcada &nbsp;·&nbsp;
+  <a href="../index.html">Volver a la web</a> &nbsp;·&nbsp;
+  <a href="../blog.html">Blog</a> &nbsp;·&nbsp;
+  <a href="../politica-de-cookies.html">Política de cookies</a>
+</footer>
+
+<script async src="https://www.instagram.com/embed.js"></script>
+
+</body>
+</html>
